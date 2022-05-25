@@ -26,6 +26,7 @@ class TranslateViewController: UIViewController {
     var pickerData: [[String]] = [[String]]()
     let translate = Translate()
 
+
     override func viewDidLoad() {
         super.viewDidLoad()
         placeholder()
@@ -35,7 +36,7 @@ class TranslateViewController: UIViewController {
                       ["English", "French"]]
 
         NotificationCenter.default.addObserver(self,
-                                                selector: #selector(keyBoardWillShow(notification:)),
+                                               selector: #selector(keyBoardWillShow(notification:)),
                                                 name: UIResponder.keyboardWillShowNotification,
                                                 object: nil)
         NotificationCenter.default.addObserver(self,
@@ -90,7 +91,7 @@ class TranslateViewController: UIViewController {
 
     func backgroundInitialisation() {
         for index in 0 ..< viewTampon.count {
-            viewTampon[index].backgroundColor = #colorLiteral(red: 0.03921568627, green: 0.6588235294, blue: 0.8823529412, alpha: 1)
+            viewTampon[index].backgroundColor = #colorLiteral(red: 0.7301337123, green: 0.9347555637, blue: 0.9017534852, alpha: 1)
         }
     }
 }
@@ -124,7 +125,7 @@ extension TranslateViewController: UIPickerViewDelegate, UIPickerViewDataSource 
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         pickerData[component][row]
     }
-
+    
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         let modification = pickerData[component][row]
         switch modification {
