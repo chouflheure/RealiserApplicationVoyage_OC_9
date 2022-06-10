@@ -37,12 +37,12 @@ class Change {
         }
 
         guard let change = montant else {
-            delegate?.printBoard(element: "00")
+            delegate?.printBoard(element: "0")
             return
         }
 
         guard let montant = Double(montant!) else {
-            delegate?.printBoard(element: "00")
+            delegate?.printBoard(element: "0")
             return
         }
 
@@ -56,7 +56,7 @@ class Change {
             if device == "Euro" {
                 delegate?.printBoard(element: String(format: "%.2f $", montant * rates))
             } else {
-                delegate?.printBoard(element: String(format: "%.2f $", montant / rates))
+                delegate?.printBoard(element: String(format: "%.2f €", montant / rates))
             }
         }
     }

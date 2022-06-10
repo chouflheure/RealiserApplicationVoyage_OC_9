@@ -29,8 +29,8 @@ extension ChangeController {
 
     func messageChangeRate() {
         guard let changed = dataRecept.usd, let rates = changed.rates["USD"] else {return}
-        changeRate.text = "Taux de change"
+        changeRate.text = "Taux de change \n\n"
         + " \n€ - $ : \(String(format: "%.2f", rates))"
-        + " \n $ - € : \(String(format: "%.2f", 1/rates))"
+        + " \n\n $ - € : \(String(format: "%.2f", 1/rates))"
     }
 }

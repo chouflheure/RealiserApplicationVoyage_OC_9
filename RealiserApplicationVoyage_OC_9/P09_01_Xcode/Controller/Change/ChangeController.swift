@@ -7,6 +7,7 @@ class ChangeController: UIViewController {
     @IBOutlet weak var picker: UIPickerView!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var changeRate: UILabel!
+    @IBOutlet weak var btnChange: UIButton!
 
     // MARK: - Variable
     let dataRecept = Change()
@@ -21,6 +22,7 @@ class ChangeController: UIViewController {
         picker.dataSource = self
         textField.delegate = self
         dataRecept.delegate = self
+        btnChange.layer.cornerRadius = 25
     }
 }
 
@@ -32,7 +34,8 @@ extension ChangeController {
 
     func conversion() {
         messageChangeRate()
-        dataRecept.conversion(device: pickerValue, montant: textField.text )
+        dataRecept.conversion(device: pickerValue, montant: textField.text
+        )
     }
 }
 
