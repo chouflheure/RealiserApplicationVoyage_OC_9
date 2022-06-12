@@ -34,18 +34,20 @@ class TranslateViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // let jsonName = "loading-animation"
-        // let animation = Animation.named(jsonName)
+        let jsonName = "loading-animation"
+        let animation = Animation.named(jsonName)
 
         // Load animation to AnimationView
-        // let traductionText = AnimationView(animation: animation)
-        // traductionText.frame = CGRect(x: 100, y: 300, width: 200, height: 200)
+        let animationView = AnimationView(animation: animation)
+
+        animationView.frame = CGRect(x: 100, y: 300, width: 200, height: 200)
 
         // Add animationView as subview
-        // view.addSubview(traductionText)
+        view.addSubview(animationView)
 
         // Play the animation
-        // traductionText.play()
+        animationView.play()
+        animationView.loopMode = .loop
 
         placeholder()
         imputTradView.delegate = self
@@ -75,8 +77,8 @@ class TranslateViewController: UIViewController {
         textField.resignFirstResponder()
         return true
     }
-    
-    func placeholder(){
+
+    func placeholder() {
         imputTradView.text = "Votre text"
         imputTradView.tintColor = .lightGray
     }
@@ -106,36 +108,29 @@ extension TranslateViewController: UITextViewDelegate {
 
     func textViewDidChange(_ textView: UITextView) {
         if imputTradView.text.isEmpty || imputTradView.text == "Votre text" {
-            print("editing")
             imputTradView.text.removeAll()
             imputTradView.textColor = UIColor.lightGray
         } else {
             imputTradView.textColor = UIColor.black
-            print(imputTradView.text)
         }
     }
 
     func textViewDidBeginEditing(_ textView: UITextView) {
         if imputTradView.text.isEmpty || imputTradView.text == "Votre text"{
-            print("begin editing")
             imputTradView.text.removeAll()
             imputTradView.textColor = UIColor.lightGray
         } else {
             imputTradView.textColor = UIColor.black
-            print(imputTradView.text)
         }
     }
 
     func textViewDidEndEditing(_ textView: UITextView) {
         if imputTradView.text.isEmpty {
-            print("end editing")
             imputTradView.text.removeAll()
             imputTradView.text = "Votre text"
             imputTradView.textColor = UIColor.lightGray
         } else {
             imputTradView.textColor = UIColor.black
-            print(imputTradView.text)
-
         }
     }
 }
