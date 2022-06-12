@@ -459,25 +459,25 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="DZY-Pz-A6i">
-                                                <rect key="frame" x="0.0" y="100" width="414" height="609"/>
+                                                <rect key="frame" x="0.0" y="100" width="414" height="579"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RU8-dE-J9a">
-                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="304.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="289.5"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SxZ-Qc-W4w">
-                                                                <rect key="frame" x="0.0" y="0.0" width="414" height="304.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="414" height="289.5"/>
                                                                 <subviews>
                                                                     <imageView autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OMh-aE-fct">
-                                                                        <rect key="frame" x="0.0" y="-1.5" width="414" height="308.5"/>
+                                                                        <rect key="frame" x="0.0" y="-1.5" width="414" height="293.5"/>
                                                                         <color key="backgroundColor" red="0.72941176470000002" green="0.93333333330000001" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <color key="tintColor" name="AccentColor"/>
                                                                         <imageReference key="image" image="bubble.right" catalog="system" symbolScale="large"/>
                                                                     </imageView>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CbL-rC-ZV4">
-                                                                        <rect key="frame" x="72" y="37" width="270" height="179.5"/>
+                                                                        <rect key="frame" x="72" y="37" width="270" height="164.5"/>
                                                                         <subviews>
                                                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Votre traduction" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="LxB-oP-x2n">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="270" height="179.5"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="270" height="164.5"/>
                                                                                 <color key="backgroundColor" red="0.72941176470000002" green="0.93333333330000001" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -508,22 +508,22 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4ty-AI-fQt">
-                                                        <rect key="frame" x="0.0" y="304.5" width="414" height="304.5"/>
+                                                        <rect key="frame" x="0.0" y="289.5" width="414" height="289.5"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HAE-RC-Jei">
-                                                                <rect key="frame" x="0.0" y="0.0" width="414" height="304.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="414" height="289.5"/>
                                                                 <subviews>
                                                                     <imageView autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="etj-Dg-tDd">
-                                                                        <rect key="frame" x="0.0" y="-1.5" width="414" height="308.5"/>
+                                                                        <rect key="frame" x="0.0" y="-1.5" width="414" height="293.5"/>
                                                                         <color key="backgroundColor" red="0.72941176470000002" green="0.93333333330000001" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <imageReference key="image" image="bubble.left" catalog="system" symbolScale="large"/>
                                                                     </imageView>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wiw-wd-UCK">
-                                                                        <rect key="frame" x="72" y="37" width="270" height="179.5"/>
+                                                                        <rect key="frame" x="72" y="37" width="270" height="164.5"/>
                                                                         <subviews>
-                                                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Votre traduction" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="HV2-5W-clh">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="270" height="179.5"/>
+                                                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Votre traduction" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="HV2-5W-clh">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="270" height="164.5"/>
                                                                                 <color key="backgroundColor" red="0.72941176470000002" green="0.93333333330000001" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -556,10 +556,10 @@
                                                 </subviews>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9uu-6s-rP6">
-                                                <rect key="frame" x="0.0" y="709" width="414" height="50"/>
+                                                <rect key="frame" x="0.0" y="679" width="414" height="80"/>
                                                 <color key="backgroundColor" red="0.72941176470000002" green="0.93333333330000001" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="Cs0-e9-ocJ"/>
+                                                    <constraint firstAttribute="height" constant="80" id="Cs0-e9-ocJ"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -574,11 +574,12 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ghM-Sm-9Ug">
-                                <rect key="frame" x="20" y="773" width="374" height="30"/>
+                                <rect key="frame" x="20" y="743" width="374" height="60"/>
                                 <color key="backgroundColor" red="0.039215686270000001" green="0.69803921568627447" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="R2u-Hq-q7Y"/>
+                                    <constraint firstAttribute="height" constant="60" id="R2u-Hq-q7Y"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Translate">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -586,9 +587,14 @@
                                     <action selector="clickButonTranslate:" destination="gUC-BF-NRP" eventType="touchUpInside" id="12J-za-pbb"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uqz-KD-5Df">
+                                <rect key="frame" x="0.0" y="811" width="414" height="85"/>
+                                <color key="backgroundColor" red="0.72941176470000002" green="0.93333333330000001" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="aOJ-Vk-wOc"/>
                         <color key="backgroundColor" red="0.65800082683563232" green="0.92577236890792847" blue="0.89370810985565186" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.72941176470000002" green="0.93333333330000001" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="iBJ-S7-bKH" firstAttribute="leading" secondItem="aOJ-Vk-wOc" secondAttribute="leading" id="0X0-BE-lLa"/>
                             <constraint firstItem="iBJ-S7-bKH" firstAttribute="trailing" secondItem="aOJ-Vk-wOc" secondAttribute="trailing" id="3VG-lv-VKr"/>
@@ -596,9 +602,13 @@
                             <constraint firstItem="9hC-3s-Cvf" firstAttribute="top" secondItem="iBJ-S7-bKH" secondAttribute="bottom" id="GI3-Nt-Snm"/>
                             <constraint firstItem="aOJ-Vk-wOc" firstAttribute="trailing" secondItem="ghM-Sm-9Ug" secondAttribute="trailing" constant="20" id="JIw-ck-xGn"/>
                             <constraint firstItem="aOJ-Vk-wOc" firstAttribute="trailing" secondItem="9hC-3s-Cvf" secondAttribute="trailing" id="KkS-kG-Cz7"/>
+                            <constraint firstItem="uqz-KD-5Df" firstAttribute="leading" secondItem="Pkr-Lz-0NJ" secondAttribute="leading" id="L16-sd-DHr"/>
+                            <constraint firstAttribute="trailing" secondItem="uqz-KD-5Df" secondAttribute="trailing" id="O4F-XH-6TC"/>
                             <constraint firstItem="ghM-Sm-9Ug" firstAttribute="leading" secondItem="aOJ-Vk-wOc" secondAttribute="leading" constant="20" id="Rdt-k2-UuT"/>
+                            <constraint firstItem="uqz-KD-5Df" firstAttribute="top" secondItem="ghM-Sm-9Ug" secondAttribute="bottom" constant="8" symbolic="YES" id="bXI-bw-h7g"/>
                             <constraint firstItem="9hC-3s-Cvf" firstAttribute="leading" secondItem="aOJ-Vk-wOc" secondAttribute="leading" id="cwB-VB-VSn"/>
                             <constraint firstItem="iBJ-S7-bKH" firstAttribute="leading" secondItem="aOJ-Vk-wOc" secondAttribute="leading" id="dBU-SI-2zf"/>
+                            <constraint firstAttribute="bottom" secondItem="uqz-KD-5Df" secondAttribute="bottom" id="eUo-Ts-7XX"/>
                             <constraint firstItem="aOJ-Vk-wOc" firstAttribute="bottom" secondItem="ghM-Sm-9Ug" secondAttribute="bottom" constant="10" id="lJt-qy-Ezq"/>
                             <constraint firstItem="aOJ-Vk-wOc" firstAttribute="bottom" secondItem="9hC-3s-Cvf" secondAttribute="bottom" id="up4-Mt-tby"/>
                             <constraint firstItem="iBJ-S7-bKH" firstAttribute="top" secondItem="aOJ-Vk-wOc" secondAttribute="top" id="yzx-Fl-Hoi"/>
@@ -610,7 +620,8 @@
                         <outlet property="picker" destination="cpm-TR-UfK" id="Ovv-Ha-e0a"/>
                         <outlet property="tradTextInput" destination="HV2-5W-clh" id="AtD-Kh-rj5"/>
                         <outlet property="tradTextView" destination="Wiw-wd-UCK" id="vOx-na-hFA"/>
-                        <outlet property="txtBC" destination="up4-Mt-tby" id="rCq-3s-Ubl"/>
+                        <outlet property="translateButton" destination="ghM-Sm-9Ug" id="A76-qM-PcE"/>
+                        <outlet property="txtBC" destination="ghM-Sm-9Ug" id="rAt-nL-iKS"/>
                         <outlet property="viewGeneral" destination="Pkr-Lz-0NJ" id="ZQf-QA-7Kc"/>
                         <outletCollection property="viewTampon" destination="hS4-Wf-Tcp" collectionClass="NSMutableArray" id="wTL-Eo-Gnz"/>
                         <outletCollection property="viewTampon" destination="Pkr-Lz-0NJ" collectionClass="NSMutableArray" id="6tI-Tg-mTl"/>
@@ -634,6 +645,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="0.72941176470000002" green="0.93333333330000001" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <outlet property="myTabBar" destination="gbO-Mo-5ID" id="Asv-jC-dm9"/>

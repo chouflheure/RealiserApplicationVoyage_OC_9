@@ -9,6 +9,7 @@ import UIKit
 
 class TranslateViewController: UIViewController {
 
+    @IBOutlet weak var translateButton: UIButton!
     // MARK: - IBOutlet
     @IBOutlet var viewGeneral: UIView!
     @IBOutlet var textTradInput: UITextView!
@@ -32,6 +33,7 @@ class TranslateViewController: UIViewController {
         super.viewDidLoad()
 
         placeholder()
+        translateButton.layer.cornerRadius = 25
         backgroundInitialisation()
         pickerData = [["Francais", "Anglais"],
                       ["English", "French"]]
