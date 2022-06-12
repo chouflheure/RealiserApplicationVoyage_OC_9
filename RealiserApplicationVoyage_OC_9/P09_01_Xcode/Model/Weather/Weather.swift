@@ -1,10 +1,3 @@
-//
-//  Weather.swift
-//  P09_01_Xcode
-//
-//  Created by charles Calvignac on 15/11/2021.
-//
-
 import Foundation
 
 class Weather {

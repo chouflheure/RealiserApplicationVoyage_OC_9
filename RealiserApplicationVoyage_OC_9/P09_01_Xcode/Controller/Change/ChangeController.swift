@@ -67,6 +67,17 @@ extension ChangeController: UIPickerViewDelegate, UIPickerViewDataSource {
         pickerData[component][row]
     }
 
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int,
+                    forComponent component: Int, reusing view: UIView?) -> UIView {
+        var label = UILabel()
+        if let val = view as? UILabel { label = val }
+        label.font = UIFont(name: "Marker felt", size: 25)
+        label.text =  pickerData[row][component]
+        label.textColor = .black
+        label.textAlignment = .center
+        return label
+    }
+
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if row == 0 && component == 0 {
             pickerView.selectRow(0, inComponent: 1, animated: true)

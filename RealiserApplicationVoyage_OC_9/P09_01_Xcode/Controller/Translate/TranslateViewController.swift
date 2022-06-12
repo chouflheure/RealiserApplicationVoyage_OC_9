@@ -1,10 +1,3 @@
-//
-//  TranslateViewController.swift
-//  P09_01_Xcode
-//
-//  Created by charles Calvignac on 15/11/2021.
-//
-
 import UIKit
 import Lottie
 
@@ -31,23 +24,16 @@ class TranslateViewController: UIViewController {
     var pickerData: [[String]] = [[String]]()
     let translate = Translate()
 
+    // Load animation to AnimationView
+    let animationView = AnimationView(animation: Animation.named("loading-animation"))
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let jsonName = "loading-animation"
-        let animation = Animation.named(jsonName)
-
-        // Load animation to AnimationView
-        let animationView = AnimationView(animation: animation)
 
         animationView.frame = CGRect(x: 100, y: 300, width: 200, height: 200)
 
         // Add animationView as subview
         view.addSubview(animationView)
-
-        // Play the animation
-        animationView.play()
-        animationView.loopMode = .loop
 
         placeholder()
         imputTradView.delegate = self
@@ -59,6 +45,13 @@ class TranslateViewController: UIViewController {
 
         picker.delegate = self
         picker.dataSource = self
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+
+        // Play the animation
+        animationView.play()
+        animationView.loopMode = .loop
     }
 
     func printData() {
@@ -109,7 +102,6 @@ extension TranslateViewController: UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
         if imputTradView.text.isEmpty || imputTradView.text == "Votre text" {
             imputTradView.text.removeAll()
-            imputTradView.textColor = UIColor.lightGray
         } else {
             imputTradView.textColor = UIColor.black
         }
@@ -118,7 +110,6 @@ extension TranslateViewController: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
         if imputTradView.text.isEmpty || imputTradView.text == "Votre text"{
             imputTradView.text.removeAll()
-            imputTradView.textColor = UIColor.lightGray
         } else {
             imputTradView.textColor = UIColor.black
         }
@@ -162,6 +153,17 @@ extension TranslateViewController: UIPickerViewDelegate, UIPickerViewDataSource 
         default:
             pickerView.selectRow(0, inComponent: 0, animated: true)
         }
+    }
+
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int,
+                    forComponent component: Int, reusing view: UIView?) -> UIView {
+        var label = UILabel()
+        if let veee = view as? UILabel { label = veee }
+        label.font = UIFont(name: "Marker felt", size: 25)
+        label.text =  pickerData[row][component]
+        label.textColor = .black
+        label.textAlignment = .center
+        return label
     }
 }
 
