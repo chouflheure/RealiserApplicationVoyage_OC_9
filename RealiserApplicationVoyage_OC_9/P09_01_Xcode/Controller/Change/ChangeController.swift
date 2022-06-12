@@ -1,4 +1,5 @@
 import UIKit
+import Lottie
 
 class ChangeController: UIViewController {
 
@@ -9,10 +10,13 @@ class ChangeController: UIViewController {
     @IBOutlet weak var changeRate: UILabel!
     @IBOutlet weak var btnChange: UIButton!
 
+    @IBOutlet weak var lottiView: UIView!
     // MARK: - Variable
     let dataRecept = Change()
     var pickerValue = "Euro"
     var pickerData = [["Euro", "Dollar"], ["Dollar", "Euro"]]
+    let animationView = AnimationView(animation: Animation.named("currency-exchange"))
+    //let animationEuroView = AnimationView(animation: Animation.named("euro"))
 
     // MARK: - Initialisation
     override func viewDidLoad() {
@@ -23,6 +27,18 @@ class ChangeController: UIViewController {
         textField.delegate = self
         dataRecept.delegate = self
         btnChange.layer.cornerRadius = 25
+        animationView.frame = CGRect(x: 100,
+                                     y: UIScreen.main.bounds.size.height/2,
+                                     width: lottiView.frame.width,
+                                     height: lottiView.frame.height)
+        view.addSubview(animationView)
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+
+        // Play the animation
+        animationView.play()
+        animationView.loopMode = .loop
     }
 }
 

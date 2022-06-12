@@ -167,24 +167,28 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                                         <color key="backgroundColor" red="0.72941176470588232" green="0.93333333333333335" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="npn-TU-6fC">
+                                                        <rect key="frame" x="0.0" y="100" width="414" height="86.5"/>
+                                                        <color key="backgroundColor" red="0.72941176470000002" green="0.93333333330000001" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </view>
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="boH-iH-Mri">
-                                                        <rect key="frame" x="0.0" y="100" width="414" height="56.5"/>
+                                                        <rect key="frame" x="0.0" y="186.5" width="414" height="60"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u2P-8Y-Kxy">
-                                                                <rect key="frame" x="0.0" y="0.0" width="50" height="56.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="20" height="60"/>
                                                                 <color key="backgroundColor" red="0.72941176470000002" green="0.93333333330000001" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" constant="50" id="8vq-qp-bYx"/>
+                                                                    <constraint firstAttribute="width" constant="20" id="8vq-qp-bYx"/>
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QRT-H6-FMm">
-                                                                <rect key="frame" x="50" y="0.0" width="314" height="56.5"/>
+                                                                <rect key="frame" x="20" y="0.0" width="374" height="60"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rT1-Y7-92x">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="314" height="56.5"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="60"/>
                                                                         <color key="backgroundColor" red="0.039215686270000001" green="0.69803921568627447" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <constraints>
-                                                                            <constraint firstAttribute="height" constant="56.5" id="yZW-Fj-f1o"/>
+                                                                            <constraint firstAttribute="height" constant="60" id="nZ7-rW-yHR"/>
                                                                         </constraints>
                                                                         <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="25"/>
                                                                         <state key="normal" title="Convert">
@@ -204,22 +208,25 @@
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QdI-zM-bFk">
-                                                                <rect key="frame" x="364" y="0.0" width="50" height="56.5"/>
+                                                                <rect key="frame" x="394" y="0.0" width="20" height="60"/>
                                                                 <color key="backgroundColor" red="0.72941176470000002" green="0.93333333330000001" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" constant="50" id="vnU-ne-7V3"/>
+                                                                    <constraint firstAttribute="width" constant="20" id="vnU-ne-7V3"/>
                                                                 </constraints>
                                                             </view>
                                                         </subviews>
                                                         <color key="backgroundColor" red="0.039215686270000001" green="0.6588235294" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </stackView>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="npn-TU-6fC">
-                                                        <rect key="frame" x="0.0" y="156.5" width="414" height="100"/>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6jf-oi-DS8">
+                                                        <rect key="frame" x="0.0" y="246.5" width="414" height="10"/>
                                                         <color key="backgroundColor" red="0.72941176470000002" green="0.93333333330000001" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="10" id="D26-GR-lkt"/>
+                                                        </constraints>
                                                     </view>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstItem="boH-iH-Mri" firstAttribute="centerY" secondItem="M6Q-vJ-UIY" secondAttribute="centerY" id="CdQ-am-4QP"/>
+                                                    <constraint firstItem="npn-TU-6fC" firstAttribute="top" secondItem="M6Q-vJ-UIY" secondAttribute="top" constant="100" id="opv-ds-Eu2"/>
                                                 </constraints>
                                             </stackView>
                                         </subviews>
@@ -243,6 +250,7 @@
                         <outlet property="btnChange" destination="rT1-Y7-92x" id="hfK-BD-JXE"/>
                         <outlet property="change" destination="fw0-j7-w3Z" id="jyG-0s-2O6"/>
                         <outlet property="changeRate" destination="mJq-W3-23U" id="Qsn-Wz-fyY"/>
+                        <outlet property="lottiView" destination="gvb-2w-fFl" id="d5Y-Zu-k6X"/>
                         <outlet property="picker" destination="tXB-fZ-kTp" id="iRV-oD-JQj"/>
                         <outlet property="textField" destination="drf-c9-ene" id="ZE1-Fh-GSa"/>
                     </connections>

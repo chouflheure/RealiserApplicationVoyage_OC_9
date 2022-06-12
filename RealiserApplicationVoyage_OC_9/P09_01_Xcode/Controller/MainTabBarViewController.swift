@@ -13,7 +13,7 @@ class MainTabBarViewController: UITabBarController {
         tabBarCustom()
         // weather.callData()
         let fontAttributes = [NSAttributedString.Key.font: UIFont(name: "Marker felt", size: 10)]
-        UITabBarItem.appearance().setTitleTextAttributes(fontAttributes as [NSAttributedString.Key : Any], for: .normal)
+        UITabBarItem.appearance().setTitleTextAttributes(fontAttributes as [NSAttributedString.Key: Any], for: .normal)
      }
 
     // MARK: - Tab Bar custum
