@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Lottie
 
 class TranslateViewController: UIViewController {
 
@@ -20,19 +21,35 @@ class TranslateViewController: UIViewController {
     @IBOutlet weak var tradTextInput: UITextView!
     @IBOutlet weak var tradTextView: UIView!
     @IBOutlet weak var imageTextTranslater: UIImageView!
-    
+    @IBOutlet weak var traductionText: UITextView!
+    @IBOutlet weak var imputTradView: UITextView!
+    // MARK: - Variable
     @IBAction func clickButonTranslate(_ sender: Any) {
         printData()
     }
 
-    // MARK: - Variable
     var pickerData: [[String]] = [[String]]()
     let translate = Translate()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // let jsonName = "loading-animation"
+        // let animation = Animation.named(jsonName)
+
+        // Load animation to AnimationView
+        // let traductionText = AnimationView(animation: animation)
+        // traductionText.frame = CGRect(x: 100, y: 300, width: 200, height: 200)
+
+        // Add animationView as subview
+        // view.addSubview(traductionText)
+
+        // Play the animation
+        // traductionText.play()
+
         placeholder()
+        imputTradView.delegate = self
+
         translateButton.layer.cornerRadius = 25
         backgroundInitialisation()
         pickerData = [["Francais", "Anglais"],
@@ -40,7 +57,6 @@ class TranslateViewController: UIViewController {
 
         picker.delegate = self
         picker.dataSource = self
-//        textTradInput.delegate = self
     }
 
     func printData() {
@@ -59,6 +75,11 @@ class TranslateViewController: UIViewController {
         textField.resignFirstResponder()
         return true
     }
+    
+    func placeholder(){
+        imputTradView.text = "Votre text"
+        imputTradView.tintColor = .lightGray
+    }
 
     @objc func keyBoardWillShow(notification: Notification) {
         if let userInfo = notification.userInfo as? [String: AnyObject] {
@@ -69,11 +90,6 @@ class TranslateViewController: UIViewController {
                 UIView.animate(withDuration: 0.5, animations: { self.view.layoutIfNeeded() })
             }
         }
-    }
-
-    func placeholder() {
-        //textTradInput.text = "Placeholder"
-        //textTradInput.textColor = .lightGray
     }
 
     func backgroundInitialisation() {
@@ -88,14 +104,38 @@ extension TranslateViewController: UITextViewDelegate {
         self.view.endEditing(true)
     }
 
+    func textViewDidChange(_ textView: UITextView) {
+        if imputTradView.text.isEmpty || imputTradView.text == "Votre text" {
+            print("editing")
+            imputTradView.text.removeAll()
+            imputTradView.textColor = UIColor.lightGray
+        } else {
+            imputTradView.textColor = UIColor.black
+            print(imputTradView.text)
+        }
+    }
+
     func textViewDidBeginEditing(_ textView: UITextView) {
-        textTradInput.text.removeAll()
-        textTradInput.textColor = .black
+        if imputTradView.text.isEmpty || imputTradView.text == "Votre text"{
+            print("begin editing")
+            imputTradView.text.removeAll()
+            imputTradView.textColor = UIColor.lightGray
+        } else {
+            imputTradView.textColor = UIColor.black
+            print(imputTradView.text)
+        }
     }
 
     func textViewDidEndEditing(_ textView: UITextView) {
-        if textTradInput.text.isEmpty {
-            placeholder()
+        if imputTradView.text.isEmpty {
+            print("end editing")
+            imputTradView.text.removeAll()
+            imputTradView.text = "Votre text"
+            imputTradView.textColor = UIColor.lightGray
+        } else {
+            imputTradView.textColor = UIColor.black
+            print(imputTradView.text)
+
         }
     }
 }
@@ -132,5 +172,4 @@ extension TranslateViewController: UIPickerViewDelegate, UIPickerViewDataSource 
 
 // MARK: - Message
 extension TranslateViewController {
-
 }

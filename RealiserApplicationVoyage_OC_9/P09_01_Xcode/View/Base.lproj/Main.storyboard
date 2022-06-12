@@ -476,12 +476,15 @@
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CbL-rC-ZV4">
                                                                         <rect key="frame" x="72" y="37" width="270" height="164.5"/>
                                                                         <subviews>
-                                                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Votre traduction" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="LxB-oP-x2n">
+                                                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="LxB-oP-x2n">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="270" height="164.5"/>
                                                                                 <color key="backgroundColor" red="0.72941176470000002" green="0.93333333330000001" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                                                <connections>
+                                                                                    <outlet property="delegate" destination="gUC-BF-NRP" id="z6q-Y4-ZX8"/>
+                                                                                </connections>
                                                                             </textView>
                                                                         </subviews>
                                                                         <color key="backgroundColor" red="0.72941176470000002" green="0.93333333330000001" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -617,9 +620,11 @@
                     <tabBarItem key="tabBarItem" title="Translate" id="ugx-g2-ixn"/>
                     <connections>
                         <outlet property="imageTextTranslater" destination="etj-Dg-tDd" id="zjl-mE-BtY"/>
+                        <outlet property="imputTradView" destination="LxB-oP-x2n" id="0RR-X8-jYd"/>
                         <outlet property="picker" destination="cpm-TR-UfK" id="Ovv-Ha-e0a"/>
                         <outlet property="tradTextInput" destination="HV2-5W-clh" id="AtD-Kh-rj5"/>
                         <outlet property="tradTextView" destination="Wiw-wd-UCK" id="vOx-na-hFA"/>
+                        <outlet property="traductionText" destination="HV2-5W-clh" id="zmF-U2-Nee"/>
                         <outlet property="translateButton" destination="ghM-Sm-9Ug" id="A76-qM-PcE"/>
                         <outlet property="txtBC" destination="ghM-Sm-9Ug" id="rAt-nL-iKS"/>
                         <outlet property="viewGeneral" destination="Pkr-Lz-0NJ" id="ZQf-QA-7Kc"/>
