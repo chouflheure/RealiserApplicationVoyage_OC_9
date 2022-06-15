@@ -87,7 +87,7 @@ extension ChangeController: UIPickerViewDelegate, UIPickerViewDataSource {
                     forComponent component: Int, reusing view: UIView?) -> UIView {
         var label = UILabel()
         if let val = view as? UILabel { label = val }
-        label.font = UIFont(name: "Marker felt", size: 25)
+        label.font = UIFont(name: "Optima", size: 25)
         label.text =  pickerData[row][component]
         label.textColor = .black
         label.textAlignment = .center

@@ -159,7 +159,7 @@ extension TranslateViewController: UIPickerViewDelegate, UIPickerViewDataSource 
                     forComponent component: Int, reusing view: UIView?) -> UIView {
         var label = UILabel()
         if let veee = view as? UILabel { label = veee }
-        label.font = UIFont(name: "Marker felt", size: 25)
+        label.font = UIFont(name: "Optima", size: 25)
         label.text =  pickerData[row][component]
         label.textColor = .black
         label.textAlignment = .center

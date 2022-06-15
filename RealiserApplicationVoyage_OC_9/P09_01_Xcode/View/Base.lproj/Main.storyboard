@@ -60,28 +60,28 @@
                                                         </constraints>
                                                     </view>
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V4A-FL-Ovp">
-                                                        <rect key="frame" x="0.0" y="10" width="414" height="20"/>
+                                                        <rect key="frame" x="0.0" y="10" width="414" height="22"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lo4-mk-0Hd">
-                                                                <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="20" height="22"/>
                                                                 <color key="backgroundColor" red="0.72941176470000002" green="0.93333333330000001" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="20" id="0DU-IV-x56"/>
                                                                 </constraints>
                                                             </view>
                                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dHk-Uz-Shz">
-                                                                <rect key="frame" x="20" y="0.0" width="374" height="20"/>
+                                                                <rect key="frame" x="20" y="0.0" width="374" height="22"/>
                                                                 <subviews>
                                                                     <textField opaque="NO" contentMode="redraw" highlighted="YES" selected="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="center" placeholder="Amount" textAlignment="center" clearsOnBeginEditing="YES" adjustsFontSizeToFit="NO" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="drf-c9-ene">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="186.5" height="20"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="186.5" height="22"/>
                                                                         <color key="backgroundColor" red="0.72941176470000002" green="0.93333333330000001" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <color key="tintColor" red="0.1058823529" green="0.25490196079999999" blue="0.54117647059999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                        <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
+                                                                        <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="17"/>
                                                                         <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" enablesReturnKeyAutomatically="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="tel"/>
                                                                     </textField>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="To9-qO-0II">
-                                                                        <rect key="frame" x="186.5" y="0.0" width="1" height="20"/>
+                                                                        <rect key="frame" x="186.5" y="0.0" width="1" height="22"/>
                                                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <rect key="contentStretch" x="0.0" y="0.0" width="0.84999999999999998" height="1"/>
                                                                         <constraints>
@@ -89,9 +89,9 @@
                                                                         </constraints>
                                                                     </view>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fw0-j7-w3Z">
-                                                                        <rect key="frame" x="187.5" y="0.0" width="186.5" height="20"/>
+                                                                        <rect key="frame" x="187.5" y="0.0" width="186.5" height="22"/>
                                                                         <color key="backgroundColor" red="0.72941176470000002" green="0.93333333330000001" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
+                                                                        <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="17"/>
                                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
@@ -101,7 +101,7 @@
                                                                 </constraints>
                                                             </stackView>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zPm-A8-wrf">
-                                                                <rect key="frame" x="394" y="0.0" width="20" height="20"/>
+                                                                <rect key="frame" x="394" y="0.0" width="20" height="22"/>
                                                                 <color key="backgroundColor" red="0.72941176470000002" green="0.93333333330000001" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="20" id="CZi-wW-2kz"/>
@@ -111,18 +111,18 @@
                                                         <color key="backgroundColor" red="0.039215686270000001" green="0.6588235294" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qfU-em-ndo">
-                                                        <rect key="frame" x="0.0" y="30" width="414" height="3"/>
+                                                        <rect key="frame" x="0.0" y="32" width="414" height="1"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UIV-QP-N1z">
-                                                                <rect key="frame" x="0.0" y="0.0" width="20" height="3"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="20" height="1"/>
                                                                 <color key="backgroundColor" red="0.72941176470000002" green="0.93333333330000001" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ur0-Em-ItN" userLabel="Line">
-                                                                <rect key="frame" x="20" y="0.0" width="374" height="3"/>
+                                                                <rect key="frame" x="20" y="0.0" width="374" height="1"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yQe-an-UkG">
-                                                                <rect key="frame" x="394" y="0.0" width="20" height="3"/>
+                                                                <rect key="frame" x="394" y="0.0" width="20" height="1"/>
                                                                 <color key="backgroundColor" red="0.72941176470000002" green="0.93333333330000001" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </view>
                                                         </subviews>
@@ -190,7 +190,7 @@
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="60" id="nZ7-rW-yHR"/>
                                                                         </constraints>
-                                                                        <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="25"/>
+                                                                        <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="25"/>
                                                                         <state key="normal" title="Convert">
                                                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         </state>
@@ -537,10 +537,11 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="289.5"/>
                                                                 <subviews>
                                                                     <imageView autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OMh-aE-fct">
-                                                                        <rect key="frame" x="0.0" y="-1.5" width="414" height="293.5"/>
+                                                                        <rect key="frame" x="0.0" y="-1" width="414" height="292.5"/>
                                                                         <color key="backgroundColor" red="0.72941176470000002" green="0.93333333330000001" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <color key="tintColor" name="AccentColor"/>
                                                                         <imageReference key="image" image="bubble.right" catalog="system" symbolScale="large"/>
+                                                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="ultraLight"/>
                                                                     </imageView>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CbL-rC-ZV4">
                                                                         <rect key="frame" x="72" y="37" width="270" height="164.5"/>
@@ -549,7 +550,7 @@
                                                                                 <rect key="frame" x="0.0" y="0.0" width="270" height="164.5"/>
                                                                                 <color key="backgroundColor" red="0.72941176470000002" green="0.93333333330000001" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="15"/>
+                                                                                <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="15"/>
                                                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                                                 <connections>
                                                                                     <outlet property="delegate" destination="gUC-BF-NRP" id="z6q-Y4-ZX8"/>
@@ -586,10 +587,11 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="289.5"/>
                                                                 <subviews>
                                                                     <imageView autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="etj-Dg-tDd">
-                                                                        <rect key="frame" x="0.0" y="-1.5" width="414" height="293.5"/>
+                                                                        <rect key="frame" x="0.0" y="-1" width="414" height="292.5"/>
                                                                         <color key="backgroundColor" red="0.72941176470000002" green="0.93333333330000001" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <imageReference key="image" image="bubble.left" catalog="system" symbolScale="large"/>
+                                                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="ultraLight"/>
                                                                     </imageView>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wiw-wd-UCK">
                                                                         <rect key="frame" x="72" y="37" width="270" height="164.5"/>
@@ -598,7 +600,7 @@
                                                                                 <rect key="frame" x="0.0" y="0.0" width="270" height="164.5"/>
                                                                                 <color key="backgroundColor" red="0.72941176470000002" green="0.93333333330000001" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="15"/>
+                                                                                <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="15"/>
                                                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                                             </textView>
                                                                         </subviews>
@@ -651,7 +653,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="R2u-Hq-q7Y"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="25"/>
+                                <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="25"/>
                                 <state key="normal" title="Translate">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
