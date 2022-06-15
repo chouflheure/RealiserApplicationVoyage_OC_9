@@ -8,10 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1D0B957B285624A7002BA348 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 1D0B957A285624A7002BA348 /* Lottie */; };
-		1D0B957D2856258E002BA348 /* loading-animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 1D0B957C2856258E002BA348 /* loading-animation.json */; };
-		1D0B957F2856A0DD002BA348 /* dollar-to-euro.json in Resources */ = {isa = PBXBuildFile; fileRef = 1D0B957E2856A0DC002BA348 /* dollar-to-euro.json */; };
-		1D0B95832856A44F002BA348 /* dollar.json in Resources */ = {isa = PBXBuildFile; fileRef = 1D0B95812856A44F002BA348 /* dollar.json */; };
-		1D0B95852856A4EB002BA348 /* euro.json in Resources */ = {isa = PBXBuildFile; fileRef = 1D0B95842856A4EB002BA348 /* euro.json */; };
 		1D0B95872856A5FC002BA348 /* currency-exchange.json in Resources */ = {isa = PBXBuildFile; fileRef = 1D0B95862856A5FC002BA348 /* currency-exchange.json */; };
 		1D2C220C2742503E00BD799A /* Translate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2C220B2742503E00BD799A /* Translate.swift */; };
 		1D2C220E2742505700BD799A /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2C220D2742505700BD799A /* Weather.swift */; };
@@ -43,9 +39,6 @@
 
 /* Begin PBXFileReference section */
 		1D0B957C2856258E002BA348 /* loading-animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "loading-animation.json"; sourceTree = "<group>"; };
-		1D0B957E2856A0DC002BA348 /* dollar-to-euro.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "dollar-to-euro.json"; sourceTree = "<group>"; };
-		1D0B95812856A44F002BA348 /* dollar.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dollar.json; sourceTree = "<group>"; };
-		1D0B95842856A4EB002BA348 /* euro.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = euro.json; sourceTree = "<group>"; };
 		1D0B95862856A5FC002BA348 /* currency-exchange.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "currency-exchange.json"; sourceTree = "<group>"; };
 		1D2C220B2742503E00BD799A /* Translate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Translate.swift; sourceTree = "<group>"; };
 		1D2C220D2742505700BD799A /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
@@ -171,9 +164,6 @@
 				1DB9C566273E00BE00F95628 /* SceneDelegate.swift */,
 				1DB9C564273E00BE00F95628 /* AppDelegate.swift */,
 				1D7D416D2750180D0084C1E6 /* Assets.xcassets */,
-				1D0B95812856A44F002BA348 /* dollar.json */,
-				1D0B95842856A4EB002BA348 /* euro.json */,
-				1D0B957E2856A0DC002BA348 /* dollar-to-euro.json */,
 				1D0B95862856A5FC002BA348 /* currency-exchange.json */,
 				1D0B957C2856258E002BA348 /* loading-animation.json */,
 				1DB9C572273E00BF00F95628 /* Info.plist */,
@@ -305,10 +295,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D0B95832856A44F002BA348 /* dollar.json in Resources */,
 				1D0B95872856A5FC002BA348 /* currency-exchange.json in Resources */,
 				1DB9C571273E00BF00F95628 /* LaunchScreen.storyboard in Resources */,
-				1D0B957F2856A0DD002BA348 /* dollar-to-euro.json in Resources */,
 				1D7D416E2750180D0084C1E6 /* Assets.xcassets in Resources */,
 				1D73BF7928576F100065ECD9 /* CarouselItem.xib in Resources */,
 				1DB9C56C273E00BE00F95628 /* Main.storyboard in Resources */,

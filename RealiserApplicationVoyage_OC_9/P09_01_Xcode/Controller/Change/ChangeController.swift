@@ -9,14 +9,13 @@ class ChangeController: UIViewController {
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var changeRate: UILabel!
     @IBOutlet weak var btnChange: UIButton!
-
     @IBOutlet weak var lottiView: UIView!
+    
     // MARK: - Variable
     let dataRecept = Change()
     var pickerValue = "Euro"
     var pickerData = [["Euro", "Dollar"], ["Dollar", "Euro"]]
     let animationView = AnimationView(animation: Animation.named("currency-exchange"))
-    //let animationEuroView = AnimationView(animation: Animation.named("euro"))
 
     // MARK: - Initialisation
     override func viewDidLoad() {
@@ -49,7 +48,6 @@ extension ChangeController {
     }
 
     func conversion() {
-        messageChangeRate()
         dataRecept.conversion(device: pickerValue, montant: textField.text
         )
     }
