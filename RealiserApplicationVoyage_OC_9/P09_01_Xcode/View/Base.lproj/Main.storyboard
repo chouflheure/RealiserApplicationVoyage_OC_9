@@ -313,11 +313,11 @@
                                                                                                 <rect key="frame" x="0.0" y="80" width="394" height="274"/>
                                                                                                 <subviews>
                                                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="quN-aL-9jU">
-                                                                                                        <rect key="frame" x="174" y="109.5" width="46" height="30.5"/>
+                                                                                                        <rect key="frame" x="174" y="109.5" width="46" height="55"/>
                                                                                                         <state key="normal" title="Button"/>
                                                                                                     </button>
                                                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qmj-6a-bJY">
-                                                                                                        <rect key="frame" x="174" y="163" width="46" height="30"/>
+                                                                                                        <rect key="frame" x="174" y="187.5" width="46" height="30"/>
                                                                                                         <constraints>
                                                                                                             <constraint firstAttribute="height" constant="30" id="m8V-69-oaO"/>
                                                                                                         </constraints>
@@ -1026,7 +1026,6 @@
     <resources>
         <image name="bubble.left" catalog="system" width="128" height="110"/>
         <image name="bubble.right" catalog="system" width="128" height="110"/>
-        <image name="new_york_weather" width="934" height="702"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

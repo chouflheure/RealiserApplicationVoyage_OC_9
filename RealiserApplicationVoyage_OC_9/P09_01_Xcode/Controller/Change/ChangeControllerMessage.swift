@@ -19,12 +19,4 @@ extension ChangeController {
         alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
         return self.present(alertVC, animated: true, completion: nil)
     }
-
-    func messageChangeRate() {
-        guard let changed = dataRecept.usd, let rates = changed.rates["USD"] else {return}
-        changeRate.text = "Taux de change \n"
-        + " \n€ - $ : \(String(format: "%.2f", rates))"
-        + " \n $ - € : \(String(format: "%.2f", 1/rates))"
-        changeRate.font = UIFont(name: "Marker felt", size: 18)
-    }
 }

@@ -12,4 +12,8 @@ extension ChangeController: ChangeDelegate {
     func printBoard(element: String) {
         change.text = element
     }
+
+    func changeRate(element: String) {
+        changeRate.text = element
+    }
 }

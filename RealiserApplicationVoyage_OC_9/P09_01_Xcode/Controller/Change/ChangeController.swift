@@ -32,6 +32,7 @@ class ChangeController: UIViewController {
                                      width: lottiView.frame.width,
                                      height: lottiView.frame.height)
         view.addSubview(animationView)
+        changeRate.font = UIFont(name: "Optima", size: 18)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -49,7 +50,6 @@ extension ChangeController {
     }
 
     func conversion() {
-        messageChangeRate()
         dataRecept.conversion(device: pickerValue, montant: textField.text
         )
     }
