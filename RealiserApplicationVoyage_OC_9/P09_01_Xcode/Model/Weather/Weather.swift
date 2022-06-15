@@ -1,11 +1,19 @@
 import Foundation
+import CoreLocation
+import UserNotifications
 
-class Weather {
+class Weather: NSObject {
 
     var dataWeatherParis: DataInfoWeather?
     var dataWeatherNY: DataInfoWeather?
+    weak var delegate: WeatherDelegate?
+    let localisationTrack: CLLocationManager = CLLocationManager()
 
     func callData(callback: @escaping (Bool) -> Void) {
+        delegate?.printBoard(element: "")
+        print("here")
+        localisationInitialisation()
+        print("here 2")
         let urlBody = "http://api.openweathermap.org/data/2.5/weather/"
         let urlAppid = "appid=01a551138c4f64c9b8b434bd7fb189db"
         let urlCountryParis = "q=Paris"
@@ -29,11 +37,11 @@ class Weather {
         //            + "?appid=01a551138c4f64c9b8b434bd7fb189db&q=Paris&units=metric"
         //        )
 
-        URLSession.shared.dataTask(with: urlParis!) { data, _, error in
+        URLSession.shared.dataTask(with: urlNY!) { data, _, error in
             DispatchQueue.main.async {
                 do {
                     guard let data = data else { callback(false); return }
-                    self.dataWeatherParis = try JSONDecoder().decode(DataInfoWeather.self, from: data)
+                    self.dataWeatherNY = try JSONDecoder().decode(DataInfoWeather.self, from: data)
                     callback(true)
                 } catch {
                     callback(false)
@@ -62,7 +70,7 @@ class Weather {
     }
 
     func dataTemperatureParis(dataWant: String) -> String {
-        guard let dataWeatherParis = dataWeatherParis else {return "Error"}
+        guard let dataWeatherParis = dataWeatherNY else {return "Error"}
         switch dataWant {
         case "temp":
             guard let data = dataWeatherParis.main["temp"] else {return "Error"}
@@ -129,5 +137,38 @@ class Weather {
 
     func time() {
 
+    }
+}
+
+extension Weather: CLLocationManagerDelegate {
+
+    func localisationInitialisation() {
+        localisationTrack.delegate = self
+        localisationTrack.requestWhenInUseAuthorization()
+        localisationTrack.startUpdatingLocation()
+    }
+
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+
+        for currentLocation in locations {
+            // print("\(index): \(currentLocation)")
+            print("latitude = \(currentLocation.coordinate.latitude)")
+            print("longitude = \(currentLocation.coordinate.longitude)")
+            localisationTrack.stopUpdatingLocation()
+            // "0: [locations]"
+            let location = CLLocation(latitude: currentLocation.coordinate.latitude,
+                                      longitude: currentLocation.coordinate.longitude)
+            location.fetchCityAndCountry { city, country, error in
+                guard let city = city, let country = country, error == nil else { return }
+                print(city + ", " + country)  // Rio de Janeiro, Brazil
+            }
+        }
+    }
+}
+
+extension CLLocation {
+    func fetchCityAndCountry(completion: @escaping (_ city: String?,
+                                                    _ country: String?, _ error: Error?) -> Void ) {
+        CLGeocoder().reverseGeocodeLocation(self) { completion($0?.first?.locality, $0?.first?.country, $1) }
     }
 }

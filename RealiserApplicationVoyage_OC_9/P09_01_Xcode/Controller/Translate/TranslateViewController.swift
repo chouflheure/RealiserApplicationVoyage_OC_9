@@ -3,24 +3,23 @@ import Lottie
 
 class TranslateViewController: UIViewController {
 
-    @IBOutlet weak var translateButton: UIButton!
     // MARK: - IBOutlet
+    @IBOutlet weak var translateButton: UIButton!
     @IBOutlet var viewGeneral: UIView!
-    @IBOutlet var textTradInput: UITextView!
     @IBOutlet weak var picker: UIPickerView!
     @IBOutlet var viewTampon: [UIView]!
     @IBOutlet weak var txtBC: NSLayoutConstraint!
     @IBOutlet var spaceHideKeyboardAppear: [UIView]!
-    @IBOutlet weak var tradTextInput: UITextView!
     @IBOutlet weak var tradTextView: UIView!
     @IBOutlet weak var imageTextTranslater: UIImageView!
     @IBOutlet weak var traductionText: UITextView!
     @IBOutlet weak var imputTradView: UITextView!
-    // MARK: - Variable
+
     @IBAction func clickButonTranslate(_ sender: Any) {
         printData()
     }
 
+    // MARK: - Variable
     var pickerData: [[String]] = [[String]]()
     let translate = Translate()
 
@@ -45,16 +44,18 @@ class TranslateViewController: UIViewController {
 
         picker.delegate = self
         picker.dataSource = self
+        traductionText.delegate = self
+        translate.delegate = self
     }
 
     override func viewWillAppear(_ animated: Bool) {
-
         // Play the animation
         animationView.play()
         animationView.loopMode = .loop
     }
 
     func printData() {
+        translate.test()
         translate.inputTranslate = "hello"
         translate.langueInputTranslate = "FR"
         translate.callData { (success) in

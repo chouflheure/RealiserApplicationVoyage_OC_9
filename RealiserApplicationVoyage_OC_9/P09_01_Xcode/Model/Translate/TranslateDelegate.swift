@@ -1,5 +1,5 @@
 import Foundation
 
-protocol TranslateDataSource: AnyObject {
+protocol TranslateDelegate: AnyObject {
     func printBoard()
 }

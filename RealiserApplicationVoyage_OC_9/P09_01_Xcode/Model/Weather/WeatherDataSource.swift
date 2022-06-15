@@ -1,5 +1,7 @@
 import Foundation
 
-protocol WeatherDataSource {
-    func printBoard()
+protocol WeatherDelegate: AnyObject {
+    func printBoard(element: String)
+    func callMessageErrorOperator()
+    func callMessageErrorWidth()
 }
