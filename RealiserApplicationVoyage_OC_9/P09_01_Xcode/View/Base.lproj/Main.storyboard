@@ -667,7 +667,6 @@
                         <outlet property="imageTextTranslater" destination="etj-Dg-tDd" id="zjl-mE-BtY"/>
                         <outlet property="imputTradView" destination="LxB-oP-x2n" id="0RR-X8-jYd"/>
                         <outlet property="picker" destination="cpm-TR-UfK" id="Ovv-Ha-e0a"/>
-                        <outlet property="tradTextInput" destination="HV2-5W-clh" id="AtD-Kh-rj5"/>
                         <outlet property="tradTextView" destination="Wiw-wd-UCK" id="vOx-na-hFA"/>
                         <outlet property="traductionText" destination="HV2-5W-clh" id="zmF-U2-Nee"/>
                         <outlet property="translateButton" destination="ghM-Sm-9Ug" id="A76-qM-PcE"/>

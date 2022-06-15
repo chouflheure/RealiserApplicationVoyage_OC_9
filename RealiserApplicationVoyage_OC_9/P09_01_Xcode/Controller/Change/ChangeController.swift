@@ -10,7 +10,7 @@ class ChangeController: UIViewController {
     @IBOutlet weak var changeRate: UILabel!
     @IBOutlet weak var btnChange: UIButton!
     @IBOutlet weak var lottiView: UIView!
-    
+
     // MARK: - Variable
     let dataRecept = Change()
     var pickerValue = "Euro"
