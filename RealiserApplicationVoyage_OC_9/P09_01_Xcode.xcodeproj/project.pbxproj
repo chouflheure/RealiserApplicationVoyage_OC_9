@@ -20,6 +20,7 @@
 		1D73BF7928576F100065ECD9 /* CarouselItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D73BF7728576F100065ECD9 /* CarouselItem.xib */; };
 		1D73BF7C28576F240065ECD9 /* CarouselPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D73BF7A28576F230065ECD9 /* CarouselPageViewController.swift */; };
 		1D73BF7D28576F240065ECD9 /* CarouselViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D73BF7B28576F240065ECD9 /* CarouselViewController.swift */; };
+		1D73BF7F285A14880065ECD9 /* WeatherControllerMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D73BF7E285A14880065ECD9 /* WeatherControllerMessage.swift */; };
 		1D7D416E2750180D0084C1E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D7D416D2750180D0084C1E6 /* Assets.xcassets */; };
 		1DB9C565273E00BE00F95628 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB9C564273E00BE00F95628 /* AppDelegate.swift */; };
 		1DB9C567273E00BE00F95628 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB9C566273E00BE00F95628 /* SceneDelegate.swift */; };
@@ -51,6 +52,7 @@
 		1D73BF7728576F100065ECD9 /* CarouselItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CarouselItem.xib; sourceTree = "<group>"; };
 		1D73BF7A28576F230065ECD9 /* CarouselPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarouselPageViewController.swift; sourceTree = "<group>"; };
 		1D73BF7B28576F240065ECD9 /* CarouselViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarouselViewController.swift; sourceTree = "<group>"; };
+		1D73BF7E285A14880065ECD9 /* WeatherControllerMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherControllerMessage.swift; sourceTree = "<group>"; };
 		1D7D416D2750180D0084C1E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1DB9C561273E00BE00F95628 /* P09_01_Xcode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = P09_01_Xcode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DB9C564273E00BE00F95628 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 				1D73BF7A28576F230065ECD9 /* CarouselPageViewController.swift */,
 				1D73BF7B28576F240065ECD9 /* CarouselViewController.swift */,
 				1DE5DF6D27486B6800FB70A6 /* WeatherViewController2.swift */,
+				1D73BF7E285A14880065ECD9 /* WeatherControllerMessage.swift */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -334,6 +337,7 @@
 				1D73BF7D28576F240065ECD9 /* CarouselViewController.swift in Sources */,
 				1D2C220E2742505700BD799A /* Weather.swift in Sources */,
 				1DECA298276A469300F8625D /* DecodableTranslateStruct.swift in Sources */,
+				1D73BF7F285A14880065ECD9 /* WeatherControllerMessage.swift in Sources */,
 				1DC2001F276A443A00F57A31 /* DecodableCurrencyStruct.swift in Sources */,
 				1D2C221A2742BE4400BD799A /* WeatherViewController.swift in Sources */,
 				1DC20016276A30C300F57A31 /* ChangeDelegate.swift in Sources */,

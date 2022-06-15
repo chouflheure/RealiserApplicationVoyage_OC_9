@@ -24,12 +24,12 @@ class Translate {
                     + "?" + urlAppid
                     + "&" + urlText
                     + "&" + urlLangage )
-                    // + "&" + urlMoneyChange )
 
         URLSession.shared.dataTask(with: url!) { data, response, error in
             DispatchQueue.main.async {
                 do {
                     guard let data = data else {return }
+                    print("data")
                     print(data)
                     self.dataTranslate = try JSONDecoder().decode(DataInfoTranslate.self, from: data)
                 } catch {

@@ -57,7 +57,6 @@ extension CarouselPageViewController: UIPageViewControllerDataSource {
             return nil
         }
 
-        
         let previousIndex = viewControllerIndex - 1
 
         guard previousIndex >= 0 else {
