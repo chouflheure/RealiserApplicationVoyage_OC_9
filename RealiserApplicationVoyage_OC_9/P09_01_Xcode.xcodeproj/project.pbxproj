@@ -14,6 +14,10 @@
 		1D2C22182742BE2500BD799A /* TranslateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2C22172742BE2500BD799A /* TranslateViewController.swift */; };
 		1D2C221A2742BE4400BD799A /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2C22192742BE4400BD799A /* WeatherViewController.swift */; };
 		1D481DF0274E655200627C84 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D481DEF274E655200627C84 /* CoreLocation.framework */; };
+		1D73BF7828576F100065ECD9 /* CarouselItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D73BF7628576F100065ECD9 /* CarouselItem.swift */; };
+		1D73BF7928576F100065ECD9 /* CarouselItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D73BF7728576F100065ECD9 /* CarouselItem.xib */; };
+		1D73BF7C28576F240065ECD9 /* CarouselPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D73BF7A28576F230065ECD9 /* CarouselPageViewController.swift */; };
+		1D73BF7D28576F240065ECD9 /* CarouselViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D73BF7B28576F240065ECD9 /* CarouselViewController.swift */; };
 		1D7D416E2750180D0084C1E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D7D416D2750180D0084C1E6 /* Assets.xcassets */; };
 		1DB9C565273E00BE00F95628 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB9C564273E00BE00F95628 /* AppDelegate.swift */; };
 		1DB9C567273E00BE00F95628 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB9C566273E00BE00F95628 /* SceneDelegate.swift */; };
@@ -39,6 +43,10 @@
 		1D2C22172742BE2500BD799A /* TranslateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateViewController.swift; sourceTree = "<group>"; };
 		1D2C22192742BE4400BD799A /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		1D481DEF274E655200627C84 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		1D73BF7628576F100065ECD9 /* CarouselItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarouselItem.swift; sourceTree = "<group>"; };
+		1D73BF7728576F100065ECD9 /* CarouselItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CarouselItem.xib; sourceTree = "<group>"; };
+		1D73BF7A28576F230065ECD9 /* CarouselPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarouselPageViewController.swift; sourceTree = "<group>"; };
+		1D73BF7B28576F240065ECD9 /* CarouselViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarouselViewController.swift; sourceTree = "<group>"; };
 		1D7D416D2750180D0084C1E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1DB9C561273E00BE00F95628 /* P09_01_Xcode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = P09_01_Xcode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DB9C564273E00BE00F95628 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +84,15 @@
 				1D481DEF274E655200627C84 /* CoreLocation.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1D73BF7528576F000065ECD9 /* item */ = {
+			isa = PBXGroup;
+			children = (
+				1D73BF7628576F100065ECD9 /* CarouselItem.swift */,
+				1D73BF7728576F100065ECD9 /* CarouselItem.xib */,
+			);
+			path = item;
 			sourceTree = "<group>";
 		};
 		1DB9C558273E00BD00F95628 = {
@@ -160,7 +177,10 @@
 		1DC20013276A309100F57A31 /* Weather */ = {
 			isa = PBXGroup;
 			children = (
+				1D73BF7528576F000065ECD9 /* item */,
 				1D2C22192742BE4400BD799A /* WeatherViewController.swift */,
+				1D73BF7A28576F230065ECD9 /* CarouselPageViewController.swift */,
+				1D73BF7B28576F240065ECD9 /* CarouselViewController.swift */,
 				1DE5DF6D27486B6800FB70A6 /* WeatherViewController2.swift */,
 			);
 			path = Weather;
@@ -264,6 +284,7 @@
 			files = (
 				1DB9C571273E00BF00F95628 /* LaunchScreen.storyboard in Resources */,
 				1D7D416E2750180D0084C1E6 /* Assets.xcassets in Resources */,
+				1D73BF7928576F100065ECD9 /* CarouselItem.xib in Resources */,
 				1DB9C56C273E00BE00F95628 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -296,6 +317,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1DE5DF6E27486B6800FB70A6 /* WeatherViewController2.swift in Sources */,
+				1D73BF7D28576F240065ECD9 /* CarouselViewController.swift in Sources */,
 				1D2C220E2742505700BD799A /* Weather.swift in Sources */,
 				1DECA298276A469300F8625D /* DecodableTranslateStruct.swift in Sources */,
 				1DC2001F276A443A00F57A31 /* DecodableCurrencyStruct.swift in Sources */,
@@ -308,6 +330,8 @@
 				1D2C220C2742503E00BD799A /* Translate.swift in Sources */,
 				1DECA29E276A476A00F8625D /* WeatherDataSource.swift in Sources */,
 				1D2C22182742BE2500BD799A /* TranslateViewController.swift in Sources */,
+				1D73BF7828576F100065ECD9 /* CarouselItem.swift in Sources */,
+				1D73BF7C28576F240065ECD9 /* CarouselPageViewController.swift in Sources */,
 				1DB9C565273E00BE00F95628 /* AppDelegate.swift in Sources */,
 				1DECA29A276A46C400F8625D /* TranslateDataSource.swift in Sources */,
 				1DB9C567273E00BE00F95628 /* SceneDelegate.swift in Sources */,
