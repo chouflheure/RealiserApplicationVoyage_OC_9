@@ -37,12 +37,22 @@ class Change {
         }
 
         guard let change = montant else {
-            delegate?.printBoard(element: "00")
+            delegate?.printBoard(element: "0")
+            delegate?.changeRate(element:
+                                    "Taux de change \n"
+                                    + " \n€ - $ : \(String(format: "%.2f", rates))"
+                                    + " \n $ - € : \(String(format: "%.2f", 1/rates))"
+            )
             return
         }
 
         guard let montant = Double(montant!) else {
-            delegate?.printBoard(element: "00")
+            delegate?.printBoard(element: "0")
+            delegate?.changeRate(element:
+                                    "Taux de change \n"
+                                    + " \n€ - $ : \(String(format: "%.2f", rates))"
+                                    + " \n $ - € : \(String(format: "%.2f", 1/rates))"
+            )
             return
         }
 
@@ -56,8 +66,13 @@ class Change {
             if device == "Euro" {
                 delegate?.printBoard(element: String(format: "%.2f $", montant * rates))
             } else {
-                delegate?.printBoard(element: String(format: "%.2f $", montant / rates))
+                delegate?.printBoard(element: String(format: "%.2f €", montant / rates))
             }
+            delegate?.changeRate(element:
+                                    "Taux de change \n"
+                                    + " \n€ - $ : \(String(format: "%.2f", rates))"
+                                    + " \n $ - € : \(String(format: "%.2f", 1/rates))"
+            )
         }
     }
 }

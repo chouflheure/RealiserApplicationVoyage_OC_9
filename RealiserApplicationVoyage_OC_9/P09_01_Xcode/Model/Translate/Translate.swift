@@ -1,10 +1,3 @@
-//
-//  Translate.swift
-//  P09_01_Xcode
-//
-//  Created by charles Calvignac on 15/11/2021.
-//
-
 import Foundation
 
 class Translate {
@@ -13,8 +6,8 @@ class Translate {
     var inputTranslate = String()
     var langueInputTranslate = String()
 
-    weak var delegate: TranslateDataSource?
-
+    weak var delegate: TranslateDelegate?
+    
     // https://api-free.deepl.com/v2/translate
     // ?auth_key=218cbfe4-65de-21d9-1cea-b987c94501c4:fx
     // &text=Hello, world
@@ -31,12 +24,12 @@ class Translate {
                     + "?" + urlAppid
                     + "&" + urlText
                     + "&" + urlLangage )
-                    // + "&" + urlMoneyChange )
 
         URLSession.shared.dataTask(with: url!) { data, response, error in
             DispatchQueue.main.async {
                 do {
                     guard let data = data else {return }
+                    print("data")
                     print(data)
                     self.dataTranslate = try JSONDecoder().decode(DataInfoTranslate.self, from: data)
                 } catch {
@@ -45,5 +38,9 @@ class Translate {
                 }
             }
         }.resume()
+    }
+    
+    func test() {
+        self.delegate?.printBoard()
     }
 }

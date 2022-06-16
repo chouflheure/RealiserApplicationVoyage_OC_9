@@ -1,4 +1,5 @@
 import UIKit
+import Lottie
 
 class ChangeController: UIViewController {
 
@@ -7,11 +8,14 @@ class ChangeController: UIViewController {
     @IBOutlet weak var picker: UIPickerView!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var changeRate: UILabel!
+    @IBOutlet weak var btnChange: UIButton!
+    @IBOutlet weak var lottiView: UIView!
 
     // MARK: - Variable
     let dataRecept = Change()
     var pickerValue = "Euro"
     var pickerData = [["Euro", "Dollar"], ["Dollar", "Euro"]]
+    let animationView = AnimationView(animation: Animation.named("currency-exchange"))
 
     // MARK: - Initialisation
     override func viewDidLoad() {
@@ -21,6 +25,20 @@ class ChangeController: UIViewController {
         picker.dataSource = self
         textField.delegate = self
         dataRecept.delegate = self
+        btnChange.layer.cornerRadius = 25
+        animationView.frame = CGRect(x: 100,
+                                     y: UIScreen.main.bounds.size.height/2,
+                                     width: lottiView.frame.width,
+                                     height: lottiView.frame.height)
+        view.addSubview(animationView)
+        changeRate.font = UIFont(name: "Optima", size: 18)
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+
+        // Play the animation
+        animationView.play()
+        animationView.loopMode = .loop
     }
 }
 
@@ -31,8 +49,8 @@ extension ChangeController {
     }
 
     func conversion() {
-        messageChangeRate()
-        dataRecept.conversion(device: pickerValue, montant: textField.text )
+        dataRecept.conversion(device: pickerValue, montant: textField.text
+        )
     }
 }
 
@@ -62,6 +80,17 @@ extension ChangeController: UIPickerViewDelegate, UIPickerViewDataSource {
 
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         pickerData[component][row]
+    }
+
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int,
+                    forComponent component: Int, reusing view: UIView?) -> UIView {
+        var label = UILabel()
+        if let val = view as? UILabel { label = val }
+        label.font = UIFont(name: "Optima", size: 25)
+        label.text =  pickerData[row][component]
+        label.textColor = .black
+        label.textAlignment = .center
+        return label
     }
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {

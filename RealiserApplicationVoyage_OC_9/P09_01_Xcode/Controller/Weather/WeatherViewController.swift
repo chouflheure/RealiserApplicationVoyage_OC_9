@@ -1,10 +1,3 @@
-//
-//  WeatherViewController.swift
-//  P09_01_Xcode
-//
-//  Created by charles Calvignac on 15/11/2021.
-//
-
 import UIKit
 import CoreLocation
 import UserNotifications

@@ -1,12 +1,7 @@
-//
-//  WeatherDataSource.swift
-//  P09_01_Xcode
-//
-//  Created by charles Calvignac on 15/12/2021.
-//
-
 import Foundation
 
-protocol WeatherDataSource {
-    func printBoard()
+protocol WeatherDelegate: AnyObject {
+    func printBoard(element: String)
+    func callMessageErrorOperator()
+    func callMessageErrorWidth()
 }

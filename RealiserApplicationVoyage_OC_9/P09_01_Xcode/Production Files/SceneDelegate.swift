@@ -1,10 +1,3 @@
-//
-//  SceneDelegate.swift
-//  P09_01_Xcode
-//
-//  Created by charles Calvignac on 12/11/2021.
-//
-
 import UIKit
 
 @available(iOS 13.0, *)

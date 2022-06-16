@@ -1,22 +1,19 @@
-//
-//  TranslateViewController.swift
-//  P09_01_Xcode
-//
-//  Created by charles Calvignac on 15/11/2021.
-//
-
 import UIKit
+import Lottie
 
 class TranslateViewController: UIViewController {
 
     // MARK: - IBOutlet
+    @IBOutlet weak var translateButton: UIButton!
     @IBOutlet var viewGeneral: UIView!
-    @IBOutlet var tradView: UITextView!
-    @IBOutlet var textTradInput: UITextView!
     @IBOutlet weak var picker: UIPickerView!
     @IBOutlet var viewTampon: [UIView]!
     @IBOutlet weak var txtBC: NSLayoutConstraint!
     @IBOutlet var spaceHideKeyboardAppear: [UIView]!
+    @IBOutlet weak var tradTextView: UIView!
+    @IBOutlet weak var imageTextTranslater: UIImageView!
+    @IBOutlet weak var traductionText: UITextView!
+    @IBOutlet weak var imputTradView: UITextView!
 
     @IBAction func clickButonTranslate(_ sender: Any) {
         printData()
@@ -26,29 +23,39 @@ class TranslateViewController: UIViewController {
     var pickerData: [[String]] = [[String]]()
     let translate = Translate()
 
+    // Load animation to AnimationView
+    let animationView = AnimationView(animation: Animation.named("loading-animation"))
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        placeholder()
-        backgroundInitialisation()
 
+        animationView.frame = CGRect(x: 100, y: 300, width: 200, height: 200)
+
+        // Add animationView as subview
+        view.addSubview(animationView)
+
+        placeholder()
+        imputTradView.delegate = self
+
+        translateButton.layer.cornerRadius = 25
+        backgroundInitialisation()
         pickerData = [["Francais", "Anglais"],
                       ["English", "French"]]
 
-        NotificationCenter.default.addObserver(self,
-                                                selector: #selector(keyBoardWillShow(notification:)),
-                                                name: UIResponder.keyboardWillShowNotification,
-                                                object: nil)
-        NotificationCenter.default.addObserver(self,
-                                                selector: #selector(keyBoardWillHide(notification:)),
-                                                name: UIResponder.keyboardWillHideNotification,
-                                                object: nil)
-
         picker.delegate = self
         picker.dataSource = self
-        textTradInput.delegate = self
+        traductionText.delegate = self
+        translate.delegate = self
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        // Play the animation
+        animationView.play()
+        animationView.loopMode = .loop
     }
 
     func printData() {
+        translate.test()
         translate.inputTranslate = "hello"
         translate.langueInputTranslate = "FR"
         translate.callData { (success) in
@@ -65,6 +72,11 @@ class TranslateViewController: UIViewController {
         return true
     }
 
+    func placeholder() {
+        imputTradView.text = "Votre text"
+        imputTradView.tintColor = .lightGray
+    }
+
     @objc func keyBoardWillShow(notification: Notification) {
         if let userInfo = notification.userInfo as? [String: AnyObject] {
             let frame = userInfo[UIResponder.keyboardFrameEndUserInfoKey]
@@ -76,21 +88,9 @@ class TranslateViewController: UIViewController {
         }
     }
 
-    @objc func keyBoardWillHide(notification: Notification) {
-        self.txtBC.constant = 60.0
-        UIView.animate(withDuration: 0.5, animations: {
-            self.view.layoutIfNeeded()
-        })
-    }
-
-    func placeholder() {
-        textTradInput.text = "Placeholder"
-        textTradInput.textColor = .lightGray
-    }
-
     func backgroundInitialisation() {
         for index in 0 ..< viewTampon.count {
-            viewTampon[index].backgroundColor = #colorLiteral(red: 0.03921568627, green: 0.6588235294, blue: 0.8823529412, alpha: 1)
+            viewTampon[index].backgroundColor = #colorLiteral(red: 0.7294117647, green: 0.9333333333, blue: 0.9019607843, alpha: 1)
         }
     }
 }
@@ -100,14 +100,29 @@ extension TranslateViewController: UITextViewDelegate {
         self.view.endEditing(true)
     }
 
+    func textViewDidChange(_ textView: UITextView) {
+        if imputTradView.text.isEmpty || imputTradView.text == "Votre text" {
+            imputTradView.text.removeAll()
+        } else {
+            imputTradView.textColor = UIColor.black
+        }
+    }
+
     func textViewDidBeginEditing(_ textView: UITextView) {
-        textTradInput.text.removeAll()
-        textTradInput.textColor = .black
+        if imputTradView.text.isEmpty || imputTradView.text == "Votre text"{
+            imputTradView.text.removeAll()
+        } else {
+            imputTradView.textColor = UIColor.black
+        }
     }
 
     func textViewDidEndEditing(_ textView: UITextView) {
-        if textTradInput.text.isEmpty {
-            placeholder()
+        if imputTradView.text.isEmpty {
+            imputTradView.text.removeAll()
+            imputTradView.text = "Votre text"
+            imputTradView.textColor = UIColor.lightGray
+        } else {
+            imputTradView.textColor = UIColor.black
         }
     }
 }
@@ -140,9 +155,19 @@ extension TranslateViewController: UIPickerViewDelegate, UIPickerViewDataSource 
             pickerView.selectRow(0, inComponent: 0, animated: true)
         }
     }
+
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int,
+                    forComponent component: Int, reusing view: UIView?) -> UIView {
+        var label = UILabel()
+        if let veee = view as? UILabel { label = veee }
+        label.font = UIFont(name: "Optima", size: 25)
+        label.text =  pickerData[row][component]
+        label.textColor = .black
+        label.textAlignment = .center
+        return label
+    }
 }
 
 // MARK: - Message
 extension TranslateViewController {
-
 }

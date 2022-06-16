@@ -1,10 +1,3 @@
-//
-//  MainTabBarViewController.swift
-//  P09_01_Xcode
-//
-//  Created by charles Calvignac on 15/11/2021.
-//
-
 import UIKit
 
 class MainTabBarViewController: UITabBarController {
@@ -19,6 +12,8 @@ class MainTabBarViewController: UITabBarController {
         super.viewDidLoad()
         tabBarCustom()
         // weather.callData()
+        let fontAttributes = [NSAttributedString.Key.font: UIFont(name: "Marker felt", size: 10)]
+        UITabBarItem.appearance().setTitleTextAttributes(fontAttributes as [NSAttributedString.Key: Any], for: .normal)
      }
 
     // MARK: - Tab Bar custum
@@ -27,6 +22,7 @@ class MainTabBarViewController: UITabBarController {
         test += 1
         print(test)
     }
+
     func tabBarCustom() {
         myTabBar?.tintColor = UIColor.black
 

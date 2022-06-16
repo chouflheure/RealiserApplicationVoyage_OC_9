@@ -7,7 +7,7 @@
 
 import UIKit
 import CoreLocation
-import UserNotifications
+// import UserNotifications
 
 class WeatherViewController2: UIViewController {
 
@@ -23,10 +23,11 @@ class WeatherViewController2: UIViewController {
     let localisationTrack: CLLocationManager = CLLocationManager()
 
     override func viewDidLoad() {
+        printData()
         super.viewDidLoad()
         backgroundImageButton(button: "NY")
         backgroundImageButton(button: "localisation")
-        localisationInitialisation()
+        //localisationInitialisation()
     }
 
     @IBAction func butonLocalisation(_ sender: Any) {
@@ -35,7 +36,7 @@ class WeatherViewController2: UIViewController {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "HH:mm"
         print(dateFormatter.string(from: NSDate() as Date))
-        localisationInitialisation()
+        // localisationInitialisation()
     }
 
     @IBAction func butonNewYork(_ sender: Any) {
@@ -61,22 +62,8 @@ class WeatherViewController2: UIViewController {
     }
 }
 
-// MARK: - MESSAGE
-
-extension WeatherViewController2 {
-
-    func messageErrorOperator() {
-        let alertVC = UIAlertController(title: "Error!",
-                                        message: "We can't etablish a connection with the server ",
-                                        preferredStyle: .alert)
-        alertVC.addAction(UIAlertAction(title: "Retry", style: .default) { (_) in self.printData() })
-        alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-        return self.present(alertVC, animated: true, completion: nil)
-    }
-}
-
 // MARK: - Localisation
-
+/*
 extension WeatherViewController2: CLLocationManagerDelegate, UNUserNotificationCenterDelegate {
     func localisationInitialisation() {
         localisationTrack.delegate = self
@@ -88,17 +75,29 @@ extension WeatherViewController2: CLLocationManagerDelegate, UNUserNotificationC
 
         for currentLocation in locations {
             // print("\(index): \(currentLocation)")
-            print(currentLocation.coordinate.latitude)
-            print(currentLocation.coordinate.longitude)
+            print("latitude = \(currentLocation.coordinate.latitude)")
+            print("longitude = \(currentLocation.coordinate.longitude)")
             localisationTrack.stopUpdatingLocation()
             // "0: [locations]"
+            let location = CLLocation(latitude: currentLocation.coordinate.latitude,
+                                      longitude: currentLocation.coordinate.longitude)
+            location.fetchCityAndCountry { city, country, error in
+                guard let city = city, let country = country, error == nil else { return }
+                print(city + ", " + country)  // Rio de Janeiro, Brazil
+            }
         }
     }
-
 }
 
-// MARK: - Image
+extension CLLocation {
+    func fetchCityAndCountry(completion: @escaping (_ city: String?,
+                                                    _ country: String?, _ error: Error?) -> Void ) {
+        CLGeocoder().reverseGeocodeLocation(self) { completion($0?.first?.locality, $0?.first?.country, $1) }
+    }
+}
+ */
 
+// MARK: - Image
 extension WeatherViewController2 {
 }
 
