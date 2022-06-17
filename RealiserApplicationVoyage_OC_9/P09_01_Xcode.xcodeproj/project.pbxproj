@@ -16,6 +16,7 @@
 		1D2C22182742BE2500BD799A /* TranslateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2C22172742BE2500BD799A /* TranslateViewController.swift */; };
 		1D2C221A2742BE4400BD799A /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2C22192742BE4400BD799A /* WeatherViewController.swift */; };
 		1D481DF0274E655200627C84 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D481DEF274E655200627C84 /* CoreLocation.framework */; };
+		1D4964C5285CB42400C5C51C /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 1D4964C4285CB42400C5C51C /* loading.json */; };
 		1D73BF7828576F100065ECD9 /* CarouselItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D73BF7628576F100065ECD9 /* CarouselItem.swift */; };
 		1D73BF7928576F100065ECD9 /* CarouselItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D73BF7728576F100065ECD9 /* CarouselItem.xib */; };
 		1D73BF7C28576F240065ECD9 /* CarouselPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D73BF7A28576F230065ECD9 /* CarouselPageViewController.swift */; };
@@ -41,7 +42,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1D0B957C2856258E002BA348 /* loading-animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "loading-animation.json"; sourceTree = "<group>"; };
 		1D0B95862856A5FC002BA348 /* currency-exchange.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "currency-exchange.json"; sourceTree = "<group>"; };
 		1D2C220B2742503E00BD799A /* Translate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Translate.swift; sourceTree = "<group>"; };
 		1D2C220D2742505700BD799A /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
@@ -50,6 +50,7 @@
 		1D2C22172742BE2500BD799A /* TranslateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateViewController.swift; sourceTree = "<group>"; };
 		1D2C22192742BE4400BD799A /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		1D481DEF274E655200627C84 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		1D4964C4285CB42400C5C51C /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
 		1D73BF7628576F100065ECD9 /* CarouselItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarouselItem.swift; sourceTree = "<group>"; };
 		1D73BF7728576F100065ECD9 /* CarouselItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CarouselItem.xib; sourceTree = "<group>"; };
 		1D73BF7A28576F230065ECD9 /* CarouselPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarouselPageViewController.swift; sourceTree = "<group>"; };
@@ -171,7 +172,7 @@
 				1DB9C564273E00BE00F95628 /* AppDelegate.swift */,
 				1D7D416D2750180D0084C1E6 /* Assets.xcassets */,
 				1D0B95862856A5FC002BA348 /* currency-exchange.json */,
-				1D0B957C2856258E002BA348 /* loading-animation.json */,
+				1D4964C4285CB42400C5C51C /* loading.json */,
 				1DB9C572273E00BF00F95628 /* Info.plist */,
 			);
 			path = "Production Files";
@@ -306,6 +307,7 @@
 			files = (
 				1D0B95872856A5FC002BA348 /* currency-exchange.json in Resources */,
 				1DB9C571273E00BF00F95628 /* LaunchScreen.storyboard in Resources */,
+				1D4964C5285CB42400C5C51C /* loading.json in Resources */,
 				1D7D416E2750180D0084C1E6 /* Assets.xcassets in Resources */,
 				1D73BF7928576F100065ECD9 /* CarouselItem.xib in Resources */,
 				1DB9C56C273E00BE00F95628 /* Main.storyboard in Resources */,

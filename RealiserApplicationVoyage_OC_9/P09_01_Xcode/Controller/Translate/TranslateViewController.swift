@@ -16,7 +16,9 @@ class TranslateViewController: UIViewController {
     @IBOutlet weak var imputTradView: UITextView!
 
     @IBAction func clickButonTranslate(_ sender: Any) {
-        printData()
+        print(lanageSelected(selected: picker.selectedRow(inComponent: 0)))
+        printData(lanageSelected: lanageSelected(selected: picker.selectedRow(inComponent: 0)))
+        animationPrint(animated: true)
     }
 
     // MARK: - Variable
@@ -24,16 +26,14 @@ class TranslateViewController: UIViewController {
     let translate = Translate()
 
     // Load animation to AnimationView
-    let animationView = AnimationView(animation: Animation.named("loading-animation"))
+    let animationView = AnimationView(animation: Animation.named("loading"))
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        animationView.frame = CGRect(x: 100, y: 300, width: 200, height: 200)
-
         // Add animationView as subview
         view.addSubview(animationView)
-
+        animationPrint(animated: false)
         placeholder()
         imputTradView.delegate = self
 
@@ -54,16 +54,43 @@ class TranslateViewController: UIViewController {
         animationView.loopMode = .loop
     }
 
-    func printData() {
-        translate.test()
-        translate.inputTranslate = "hello"
-        translate.langueInputTranslate = "FR"
+    func lanageSelected(selected: Int) -> String {
+        if selected == 0 {
+            return "fr"
+        } else {
+            return "en"
+        }
+    }
+    func printData(lanageSelected: String) {
+        print("imputTradView = \(imputTradView.text!)")
+        translate.inputTranslate = imputTradView.text!
+        translate.langueInputTranslate = lanageSelected
         translate.callData { (success) in
             if success {
-                // self.dataTest()
+                self.animationPrint(animated: false)
+                // self.animationView.stop()
             } else {
-                // self.messageErrorOperator()
+                self.animationPrint(animated: false)
+                self.messageErrorOperation()
             }
+        }
+    }
+
+    func animationPrint(animated: Bool) {
+        if animated {
+            animationView.frame = CGRect(
+                x: (UIScreen.main.bounds.maxX / 2) - 100,
+                y: UIScreen.main.bounds.maxY / 2,
+                width: 200,
+                height: 200
+            )
+        } else {
+            animationView.frame = CGRect(
+                x: (UIScreen.main.bounds.maxX / 2) - 100,
+                y: UIScreen.main.bounds.maxY / 2,
+                width: 0,
+                height: 0
+            )
         }
     }
 

@@ -1,5 +1,5 @@
 import Foundation
 
 struct DataInfoTranslate: Decodable {
-    let translations: [String: String]
+    let translations: [[String: String]]
 }

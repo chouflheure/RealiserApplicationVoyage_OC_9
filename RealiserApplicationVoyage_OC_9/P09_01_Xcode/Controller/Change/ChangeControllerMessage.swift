@@ -2,7 +2,7 @@ import UIKit
 
 extension ChangeController {
 
-    func messageErrorOperator() {
+    func messageErrorOperation() {
         let alertVC = UIAlertController(title: "Erreur!",
                                         message: "Nous n'avons pas réussi à établir une conexion avec le serveur",
                                         preferredStyle: .alert)
