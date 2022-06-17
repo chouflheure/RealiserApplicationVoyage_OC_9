@@ -15,9 +15,10 @@ class Translate {
 
     func callData(callback: @escaping (Bool) -> Void) {
         // delegate?.animation(animated: true)
+        let newString = inputTranslate.replacingOccurrences(of: " ", with: "%20", options: .literal, range: nil)
         let urlBody = "https://api-free.deepl.com/v2/translate"
         let urlAppid = "auth_key=218cbfe4-65de-21d9-1cea-b987c94501c4:fx"
-        let urlText = "text=\(inputTranslate)"
+        let urlText = "text=\(newString)"
         let urlLangage = "target_lang=\(langueInputTranslate)"
 
         let defaultUrl = URL(string:
