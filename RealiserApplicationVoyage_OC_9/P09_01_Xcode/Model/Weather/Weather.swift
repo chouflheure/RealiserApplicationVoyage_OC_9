@@ -32,11 +32,6 @@ class Weather: NSObject {
                             "&" + urlCountryNY +
                             "&" + urlUnits )
 
-        //        let urlParis = URL(
-        //            string: "http://api.openweathermap.org/data/2.5/weather/"
-        //            + "?appid=01a551138c4f64c9b8b434bd7fb189db&q=Paris&units=metric"
-        //        )
-
         URLSession.shared.dataTask(with: urlNY!) { data, _, error in
             DispatchQueue.main.async {
                 do {

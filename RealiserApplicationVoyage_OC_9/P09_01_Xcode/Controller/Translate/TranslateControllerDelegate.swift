@@ -1,8 +1,9 @@
 import Foundation
+import Lottie
+import UIKit
 
 extension TranslateViewController: TranslateDelegate {
-    func printBoard() {
-        print("######################");
-        traductionText.text = "hello"
+    func printBoard(element: String) {
+        traductionText.text = element
     }
 }

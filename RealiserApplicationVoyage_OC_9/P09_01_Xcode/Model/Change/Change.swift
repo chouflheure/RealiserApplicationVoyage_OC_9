@@ -22,8 +22,7 @@ class Change {
                     guard let data = data else {return }
                     self.usd = try JSONDecoder().decode(Currency.self, from: data)
                 } catch {
-                    print(error)
-                    print(response ?? "good")
+                    self.delegate?.printBoard(element: "ERROR")
                 }
             }
         }.resume()
@@ -32,7 +31,7 @@ class Change {
     func conversion(device: String, montant: String?) {
         guard let usd = usd, let rates = usd.rates["USD"] else {
             delegate?.printBoard(element: "ERROR")
-            delegate?.callMessageErrorOperator()
+            delegate?.callMessageErrorOperation()
             return
         }
 

@@ -1,8 +1,8 @@
 import UIKit
 
 extension ChangeController: ChangeDelegate {
-    func callMessageErrorOperator() {
-        messageErrorOperator()
+    func callMessageErrorOperation() {
+        messageErrorOperation()
     }
 
     func callMessageErrorWidth() {
