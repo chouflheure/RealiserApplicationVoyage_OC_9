@@ -27,7 +27,7 @@ class WeatherViewController2: UIViewController {
         super.viewDidLoad()
         backgroundImageButton(button: "NY")
         backgroundImageButton(button: "localisation")
-        //localisationInitialisation()
+        // localisationInitialisation()
     }
 
     @IBAction func butonLocalisation(_ sender: Any) {

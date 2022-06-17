@@ -16,7 +16,7 @@ class Change {
                             "?" + urlAppid +
                             "&" + urlMoneyChange )
 
-        URLSession.shared.dataTask(with: url!) { data, response, error in
+        URLSession.shared.dataTask(with: url!) { data, _/*response*/, _ /*error*/ in
             DispatchQueue.main.async {
                 do {
                     guard let data = data else {return }

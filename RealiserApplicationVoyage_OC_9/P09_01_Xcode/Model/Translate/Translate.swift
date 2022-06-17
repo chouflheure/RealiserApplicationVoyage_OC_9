@@ -35,7 +35,7 @@ class Translate {
                     + "&" + urlLangage
         )
 
-        URLSession.shared.dataTask(with: url ?? defaultUrl!) { data, response, error in
+        URLSession.shared.dataTask(with: url ?? defaultUrl!) {data, _ /* response */, error in
             DispatchQueue.main.async {
                 do {
                     guard let data = data else { callback(false); return }
@@ -47,6 +47,7 @@ class Translate {
                     callback(true)
                 } catch {
                     callback(false)
+                    print("error = \(error.localizedDescription)")
                 }
             }
         }.resume()
