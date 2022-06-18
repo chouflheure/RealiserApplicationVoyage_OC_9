@@ -16,7 +16,6 @@ class TranslateViewController: UIViewController {
     @IBOutlet weak var imputTradView: UITextView!
 
     @IBAction func clickButonTranslate(_ sender: Any) {
-        // print(lanageSelected(selected: ))
         printData(langageSelected: lanageSelected(selected: picker.selectedRow(inComponent: 0)))
         animationPrint(animated: true)
     }
@@ -55,7 +54,6 @@ class TranslateViewController: UIViewController {
     }
 
     func lanageSelected(selected: Int) -> String {
-        print("selected \(selected)")
         if selected == 0 {
             return "EN"
         } else {
@@ -63,14 +61,11 @@ class TranslateViewController: UIViewController {
         }
     }
     func printData(langageSelected: String) {
-        print("imputTradView = \(imputTradView.text!)")
         translate.inputTranslate = imputTradView.text!
         translate.langueInputTranslate = langageSelected
-        print("langageSelected = \(langageSelected)")
         translate.callData { (success) in
             if success {
                 self.animationPrint(animated: false)
-                // self.animationView.stop()
             } else {
                 self.animationPrint(animated: false)
                 self.messageErrorOperation()

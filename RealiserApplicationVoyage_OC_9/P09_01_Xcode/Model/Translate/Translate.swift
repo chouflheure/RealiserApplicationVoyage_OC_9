@@ -8,13 +8,7 @@ class Translate {
 
     weak var delegate: TranslateDelegate?
 
-    // https://api-free.deepl.com/v2/translate
-    // ?auth_key=218cbfe4-65de-21d9-1cea-b987c94501c4:fx
-    // &text=Hello, world
-    // &target_lang=FR
-
     func callData(callback: @escaping (Bool) -> Void) {
-        // delegate?.animation(animated: true)
         let newString = inputTranslate.replacingOccurrences(of: " ", with: "%20", options: .literal, range: nil)
         let urlBody = "https://api-free.deepl.com/v2/translate"
         let urlAppid = "auth_key=218cbfe4-65de-21d9-1cea-b987c94501c4:fx"
@@ -40,14 +34,10 @@ class Translate {
                 do {
                     guard let data = data else { callback(false); return }
                     self.dataTranslate = try JSONDecoder().decode(DataInfoTranslate.self, from: data)
-                    print(self.dataTranslate.translations[0]["text"] ?? "")
-                    print("data")
-                    print(data)
                     self.delegate?.printBoard(element: self.dataTranslate.translations[0]["text"] ?? "")
                     callback(true)
                 } catch {
                     callback(false)
-                    print("error = \(error.localizedDescription)")
                 }
             }
         }.resume()
