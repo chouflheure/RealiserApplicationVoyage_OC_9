@@ -8,13 +8,12 @@
 // import Foundation
 import UIKit
 
-extension WeatherViewController2 {
+extension WeatherPageViewController {
 
-    func messageErrorOperator() {
+    func messageErrorServerConnexion() {
         let alertVC = UIAlertController(title: "Error!",
-                                        message: "We can't etablish a connection with the server ",
+                                        message: "Nous n'avons pas réussi à établir une conexion avec le serveur",
                                         preferredStyle: .alert)
-        alertVC.addAction(UIAlertAction(title: "Retry", style: .default) { (_) in self.printData() })
         alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
         return self.present(alertVC, animated: true, completion: nil)
     }

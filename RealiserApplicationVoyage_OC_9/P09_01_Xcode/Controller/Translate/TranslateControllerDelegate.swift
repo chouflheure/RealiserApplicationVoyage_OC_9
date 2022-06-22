@@ -3,7 +3,7 @@ import Lottie
 import UIKit
 
 extension TranslateViewController: TranslateDelegate {
-    func printBoard(element: String) {
+    func updateTranslate(element: String) {
         traductionText.text = element
     }
 }

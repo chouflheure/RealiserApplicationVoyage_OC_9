@@ -1,5 +1,5 @@
 import Foundation
 
 protocol TranslateDelegate: AnyObject {
-    func printBoard(element: String)
+    func updateTranslate(element: String)
 }

@@ -14,14 +14,13 @@
 		1D2C22102742834F00BD799A /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2C220F2742834F00BD799A /* MainTabBarViewController.swift */; };
 		1D2C22122742BC6700BD799A /* ChangeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2C22112742BC6700BD799A /* ChangeController.swift */; };
 		1D2C22182742BE2500BD799A /* TranslateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2C22172742BE2500BD799A /* TranslateViewController.swift */; };
-		1D2C221A2742BE4400BD799A /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2C22192742BE4400BD799A /* WeatherViewController.swift */; };
 		1D481DF0274E655200627C84 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D481DEF274E655200627C84 /* CoreLocation.framework */; };
 		1D4964C5285CB42400C5C51C /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 1D4964C4285CB42400C5C51C /* loading.json */; };
 		1D73BF7828576F100065ECD9 /* CarouselItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D73BF7628576F100065ECD9 /* CarouselItem.swift */; };
 		1D73BF7928576F100065ECD9 /* CarouselItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D73BF7728576F100065ECD9 /* CarouselItem.xib */; };
-		1D73BF7C28576F240065ECD9 /* CarouselPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D73BF7A28576F230065ECD9 /* CarouselPageViewController.swift */; };
-		1D73BF7D28576F240065ECD9 /* CarouselViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D73BF7B28576F240065ECD9 /* CarouselViewController.swift */; };
-		1D73BF7F285A14880065ECD9 /* WeatherControllerMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D73BF7E285A14880065ECD9 /* WeatherControllerMessage.swift */; };
+		1D73BF7C28576F240065ECD9 /* WeatherlPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D73BF7A28576F230065ECD9 /* WeatherlPageViewController.swift */; };
+		1D73BF7D28576F240065ECD9 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D73BF7B28576F240065ECD9 /* WeatherViewController.swift */; };
+		1D73BF7F285A14880065ECD9 /* WeatherViewControllerMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D73BF7E285A14880065ECD9 /* WeatherViewControllerMessage.swift */; };
 		1D73BF82285A3CDE0065ECD9 /* TranslateControllerMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D73BF81285A3CDE0065ECD9 /* TranslateControllerMessage.swift */; };
 		1D73BF84285A3CF20065ECD9 /* TranslateControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D73BF83285A3CF20065ECD9 /* TranslateControllerDelegate.swift */; };
 		1D7D416E2750180D0084C1E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D7D416D2750180D0084C1E6 /* Assets.xcassets */; };
@@ -34,11 +33,11 @@
 		1DC20018276A3F8300F57A31 /* ChangeControllerMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC20017276A3F8300F57A31 /* ChangeControllerMessage.swift */; };
 		1DC2001D276A440E00F57A31 /* ChangeDelegateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC2001C276A440E00F57A31 /* ChangeDelegateProtocol.swift */; };
 		1DC2001F276A443A00F57A31 /* DecodableCurrencyStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC2001E276A443A00F57A31 /* DecodableCurrencyStruct.swift */; };
-		1DE5DF6E27486B6800FB70A6 /* WeatherViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE5DF6D27486B6800FB70A6 /* WeatherViewController2.swift */; };
 		1DECA298276A469300F8625D /* DecodableTranslateStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DECA297276A469300F8625D /* DecodableTranslateStruct.swift */; };
 		1DECA29A276A46C400F8625D /* TranslateDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DECA299276A46C400F8625D /* TranslateDelegate.swift */; };
 		1DECA29C276A473700F8625D /* DecodableWeatherStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DECA29B276A473700F8625D /* DecodableWeatherStruct.swift */; };
 		1DECA29E276A476A00F8625D /* WeatherDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DECA29D276A476A00F8625D /* WeatherDataSource.swift */; };
+		1DFBED6A285FADF200A36D85 /* WeatherDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DFBED69285FADF200A36D85 /* WeatherDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,14 +47,13 @@
 		1D2C220F2742834F00BD799A /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		1D2C22112742BC6700BD799A /* ChangeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ChangeController.swift; path = P09_01_Xcode/Controller/Change/ChangeController.swift; sourceTree = SOURCE_ROOT; };
 		1D2C22172742BE2500BD799A /* TranslateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateViewController.swift; sourceTree = "<group>"; };
-		1D2C22192742BE4400BD799A /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		1D481DEF274E655200627C84 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		1D4964C4285CB42400C5C51C /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
 		1D73BF7628576F100065ECD9 /* CarouselItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarouselItem.swift; sourceTree = "<group>"; };
 		1D73BF7728576F100065ECD9 /* CarouselItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CarouselItem.xib; sourceTree = "<group>"; };
-		1D73BF7A28576F230065ECD9 /* CarouselPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarouselPageViewController.swift; sourceTree = "<group>"; };
-		1D73BF7B28576F240065ECD9 /* CarouselViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarouselViewController.swift; sourceTree = "<group>"; };
-		1D73BF7E285A14880065ECD9 /* WeatherControllerMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherControllerMessage.swift; sourceTree = "<group>"; };
+		1D73BF7A28576F230065ECD9 /* WeatherlPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherlPageViewController.swift; sourceTree = "<group>"; };
+		1D73BF7B28576F240065ECD9 /* WeatherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
+		1D73BF7E285A14880065ECD9 /* WeatherViewControllerMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewControllerMessage.swift; sourceTree = "<group>"; };
 		1D73BF81285A3CDE0065ECD9 /* TranslateControllerMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateControllerMessage.swift; sourceTree = "<group>"; };
 		1D73BF83285A3CF20065ECD9 /* TranslateControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateControllerDelegate.swift; sourceTree = "<group>"; };
 		1D7D416D2750180D0084C1E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -70,11 +68,11 @@
 		1DC20017276A3F8300F57A31 /* ChangeControllerMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeControllerMessage.swift; sourceTree = "<group>"; };
 		1DC2001C276A440E00F57A31 /* ChangeDelegateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeDelegateProtocol.swift; sourceTree = "<group>"; };
 		1DC2001E276A443A00F57A31 /* DecodableCurrencyStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodableCurrencyStruct.swift; sourceTree = "<group>"; };
-		1DE5DF6D27486B6800FB70A6 /* WeatherViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController2.swift; sourceTree = "<group>"; };
 		1DECA297276A469300F8625D /* DecodableTranslateStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodableTranslateStruct.swift; sourceTree = "<group>"; };
 		1DECA299276A46C400F8625D /* TranslateDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateDelegate.swift; sourceTree = "<group>"; };
 		1DECA29B276A473700F8625D /* DecodableWeatherStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodableWeatherStruct.swift; sourceTree = "<group>"; };
 		1DECA29D276A476A00F8625D /* WeatherDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDataSource.swift; sourceTree = "<group>"; };
+		1DFBED69285FADF200A36D85 /* WeatherDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,11 +190,10 @@
 			isa = PBXGroup;
 			children = (
 				1D73BF7528576F000065ECD9 /* item */,
-				1D2C22192742BE4400BD799A /* WeatherViewController.swift */,
-				1D73BF7A28576F230065ECD9 /* CarouselPageViewController.swift */,
-				1D73BF7B28576F240065ECD9 /* CarouselViewController.swift */,
-				1DE5DF6D27486B6800FB70A6 /* WeatherViewController2.swift */,
-				1D73BF7E285A14880065ECD9 /* WeatherControllerMessage.swift */,
+				1D73BF7B28576F240065ECD9 /* WeatherViewController.swift */,
+				1D73BF7A28576F230065ECD9 /* WeatherlPageViewController.swift */,
+				1D73BF7E285A14880065ECD9 /* WeatherViewControllerMessage.swift */,
+				1DFBED69285FADF200A36D85 /* WeatherDelegate.swift */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -341,14 +338,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1DE5DF6E27486B6800FB70A6 /* WeatherViewController2.swift in Sources */,
-				1D73BF7D28576F240065ECD9 /* CarouselViewController.swift in Sources */,
+				1D73BF7D28576F240065ECD9 /* WeatherViewController.swift in Sources */,
 				1D2C220E2742505700BD799A /* Weather.swift in Sources */,
 				1DECA298276A469300F8625D /* DecodableTranslateStruct.swift in Sources */,
-				1D73BF7F285A14880065ECD9 /* WeatherControllerMessage.swift in Sources */,
+				1D73BF7F285A14880065ECD9 /* WeatherViewControllerMessage.swift in Sources */,
 				1D73BF82285A3CDE0065ECD9 /* TranslateControllerMessage.swift in Sources */,
 				1DC2001F276A443A00F57A31 /* DecodableCurrencyStruct.swift in Sources */,
-				1D2C221A2742BE4400BD799A /* WeatherViewController.swift in Sources */,
 				1DC20016276A30C300F57A31 /* ChangeDelegate.swift in Sources */,
 				1D2C22122742BC6700BD799A /* ChangeController.swift in Sources */,
 				1D2C22102742834F00BD799A /* MainTabBarViewController.swift in Sources */,
@@ -358,10 +353,11 @@
 				1DECA29E276A476A00F8625D /* WeatherDataSource.swift in Sources */,
 				1D2C22182742BE2500BD799A /* TranslateViewController.swift in Sources */,
 				1D73BF7828576F100065ECD9 /* CarouselItem.swift in Sources */,
-				1D73BF7C28576F240065ECD9 /* CarouselPageViewController.swift in Sources */,
+				1D73BF7C28576F240065ECD9 /* WeatherlPageViewController.swift in Sources */,
 				1DB9C565273E00BE00F95628 /* AppDelegate.swift in Sources */,
 				1D73BF84285A3CF20065ECD9 /* TranslateControllerDelegate.swift in Sources */,
 				1DECA29A276A46C400F8625D /* TranslateDelegate.swift in Sources */,
+				1DFBED6A285FADF200A36D85 /* WeatherDelegate.swift in Sources */,
 				1DB9C567273E00BE00F95628 /* SceneDelegate.swift in Sources */,
 				1DECA29C276A473700F8625D /* DecodableWeatherStruct.swift in Sources */,
 				1DC2001D276A440E00F57A31 /* ChangeDelegateProtocol.swift in Sources */,

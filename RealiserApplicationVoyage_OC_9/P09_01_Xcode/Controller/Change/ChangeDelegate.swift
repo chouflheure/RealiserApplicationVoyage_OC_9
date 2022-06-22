@@ -1,19 +1,19 @@
 import UIKit
 
 extension ChangeController: ChangeDelegate {
-    func callMessageErrorOperation() {
-        messageErrorOperation()
+    internal func messageErrorServerConnexionDelegate() {
+        messageErrorServerConnexion()
     }
 
-    func callMessageErrorWidth() {
-        messageErrorWidth()
+    internal func messageErrorLengthChangeInputDelegate() {
+        messageErrorLengthChangeInput()
     }
 
-    func printBoard(element: String) {
+    internal func updateChange(element: String) {
         change.text = element
     }
 
-    func changeRate(element: String) {
+    internal func changeRate(element: String) {
         changeRate.text = element
     }
 }

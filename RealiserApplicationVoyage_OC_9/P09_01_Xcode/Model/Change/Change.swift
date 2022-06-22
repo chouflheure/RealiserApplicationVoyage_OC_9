@@ -2,7 +2,7 @@ import Foundation
 
 class Change {
 
-    var usd: Currency!
+    var currency: Currency!
     weak var delegate: ChangeDelegate?
 
     func callData() {
@@ -11,32 +11,39 @@ class Change {
         let urlAppid = "access_key=8663c04304d05e8fdf3fcf4ba739e09b"
         let urlMoneyChange = "symbols=USD"
 
+        let defaultUrl = URL(string:
+                                urlBody
+                                + "?" + urlAppid
+                                + "&" + ""
+            )
+
         let url = URL(string:
                             urlBody +
                             "?" + urlAppid +
                             "&" + urlMoneyChange )
 
-        URLSession.shared.dataTask(with: url!) { data, _/*response*/, _ /*error*/ in
+        // We can unwrap default url because it's a true link
+        URLSession.shared.dataTask(with: url ?? defaultUrl!) { data, _/*response*/, _ /*error*/ in
             DispatchQueue.main.async {
                 do {
                     guard let data = data else {return }
-                    self.usd = try JSONDecoder().decode(Currency.self, from: data)
+                    self.currency = try JSONDecoder().decode(Currency.self, from: data)
                 } catch {
-                    self.delegate?.printBoard(element: "ERROR")
+                    self.delegate?.updateChange(element: "ERROR")
                 }
             }
         }.resume()
     }
 
     func conversion(device: String, montant: String?) {
-        guard let usd = usd, let rates = usd.rates["USD"] else {
-            delegate?.printBoard(element: "ERROR")
-            delegate?.callMessageErrorOperation()
+        guard let currency = currency, let rates = currency.rates["USD"] else {
+            delegate?.updateChange(element: "ERROR")
+            delegate?.messageErrorServerConnexionDelegate()
             return
         }
 
         guard let change = montant else {
-            delegate?.printBoard(element: "0")
+            delegate?.updateChange(element: "0")
             delegate?.changeRate(element:
                                     "Taux de change \n"
                                     + " \n€ - $ : \(String(format: "%.2f", rates))"
@@ -45,8 +52,8 @@ class Change {
             return
         }
 
-        guard let montant = Double(montant!) else {
-            delegate?.printBoard(element: "0")
+        guard let amount = Double(montant!) else {
+            delegate?.updateChange(element: "0")
             delegate?.changeRate(element:
                                     "Taux de change \n"
                                     + " \n€ - $ : \(String(format: "%.2f", rates))"
@@ -55,17 +62,17 @@ class Change {
             return
         }
 
-        if !montant.isLess(than: 1000000) {
-            delegate?.printBoard(element: "ERROR")
-            delegate?.callMessageErrorWidth()
+        if !amount.isLess(than: 1000000) {
+            delegate?.updateChange(element: "ERROR")
+            delegate?.messageErrorLengthChangeInputDelegate()
         }
         if change.isEmpty {
-            delegate?.printBoard(element: "0.0")
+            delegate?.updateChange(element: "0.0")
         } else {
             if device == "Euro" {
-                delegate?.printBoard(element: String(format: "%.2f $", montant * rates))
+                delegate?.updateChange(element: String(format: "%.2f $", amount * rates))
             } else {
-                delegate?.printBoard(element: String(format: "%.2f €", montant / rates))
+                delegate?.updateChange(element: String(format: "%.2f €", amount / rates))
             }
             delegate?.changeRate(element:
                                     "Taux de change \n"

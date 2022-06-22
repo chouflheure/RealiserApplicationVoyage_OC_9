@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kvz-tx-uQM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kvz-tx-uQM">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -72,7 +72,7 @@
                                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dHk-Uz-Shz">
                                                                 <rect key="frame" x="20" y="0.0" width="374" height="22"/>
                                                                 <subviews>
-                                                                    <textField opaque="NO" contentMode="redraw" highlighted="YES" selected="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="center" placeholder="Amount" textAlignment="center" clearsOnBeginEditing="YES" adjustsFontSizeToFit="NO" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="drf-c9-ene">
+                                                                    <textField opaque="NO" contentMode="redraw" highlighted="YES" selected="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="center" placeholder="Amount" textAlignment="center" clearsOnBeginEditing="YES" adjustsFontSizeToFit="NO" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="drf-c9-ene" userLabel="amountChangeInput">
                                                                         <rect key="frame" x="0.0" y="0.0" width="186.5" height="22"/>
                                                                         <color key="backgroundColor" red="0.72941176470000002" green="0.93333333330000001" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <color key="tintColor" red="0.1058823529" green="0.25490196079999999" blue="0.54117647059999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -247,17 +247,17 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Change" id="UBd-Sd-N5n"/>
                     <connections>
+                        <outlet property="amountChangeInput" destination="drf-c9-ene" id="3QT-Kq-uyA"/>
                         <outlet property="btnChange" destination="rT1-Y7-92x" id="hfK-BD-JXE"/>
                         <outlet property="change" destination="fw0-j7-w3Z" id="jyG-0s-2O6"/>
                         <outlet property="changeRate" destination="mJq-W3-23U" id="Qsn-Wz-fyY"/>
                         <outlet property="lottiView" destination="gvb-2w-fFl" id="d5Y-Zu-k6X"/>
                         <outlet property="picker" destination="tXB-fZ-kTp" id="iRV-oD-JQj"/>
-                        <outlet property="textField" destination="drf-c9-ene" id="ZE1-Fh-GSa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="44.927536231884062" y="999.77678571428567"/>
+            <point key="canvasLocation" x="896" y="875"/>
         </scene>
         <!--Wheater-->
         <scene sceneID="Df6-hN-ZJD">
@@ -511,7 +511,7 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="289.5"/>
                                                                 <subviews>
                                                                     <imageView autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OMh-aE-fct">
-                                                                        <rect key="frame" x="0.0" y="-2" width="414" height="294.5"/>
+                                                                        <rect key="frame" x="0.0" y="-1" width="414" height="292.5"/>
                                                                         <color key="backgroundColor" red="0.72941176470000002" green="0.93333333330000001" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <color key="tintColor" name="AccentColor"/>
                                                                         <imageReference key="image" image="bubble.right" catalog="system" symbolScale="large"/>
@@ -561,7 +561,7 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="289.5"/>
                                                                 <subviews>
                                                                     <imageView autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="etj-Dg-tDd">
-                                                                        <rect key="frame" x="0.0" y="-2" width="414" height="294.5"/>
+                                                                        <rect key="frame" x="0.0" y="-1" width="414" height="292.5"/>
                                                                         <color key="backgroundColor" red="0.72941176470000002" green="0.93333333330000001" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <imageReference key="image" image="bubble.left" catalog="system" symbolScale="large"/>
@@ -683,7 +683,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gkP-fe-uQi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1405.7971014492755" y="132.58928571428572"/>
+            <point key="canvasLocation" x="1396" y="123"/>
         </scene>
         <!--Main Tab Bar View Controller-->
         <scene sceneID="alU-HD-MQ5">
@@ -710,7 +710,7 @@
         <!--Item-->
         <scene sceneID="85w-d4-qxf">
             <objects>
-                <viewController id="p9g-zc-fA6" customClass="CarouselViewController" customModule="P09_01_Xcode" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="p9g-zc-fA6" customClass="WeatherViewController" customModule="P09_01_Xcode" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dRb-vs-Y4s">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -739,15 +739,15 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HLQ-Q5-S51" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-762.31884057971024" y="73.660714285714278"/>
+            <point key="canvasLocation" x="-452" y="875"/>
         </scene>
-        <!--Carousel Page View Controller-->
+        <!--Weather Page View Controller-->
         <scene sceneID="Fr0-a3-x8c">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="x7R-ob-Yas" customClass="CarouselPageViewController" customModule="P09_01_Xcode" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="x7R-ob-Yas" customClass="WeatherPageViewController" customModule="P09_01_Xcode" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="90X-TK-MfC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-761" y="676"/>
+            <point key="canvasLocation" x="-451" y="1584"/>
         </scene>
     </scenes>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

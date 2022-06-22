@@ -1,8 +1,8 @@
 import Foundation
 
 protocol ChangeDelegate: AnyObject {
-    func printBoard(element: String)
-    func callMessageErrorOperation()
-    func callMessageErrorWidth()
+    func updateChange(element: String)
+    func messageErrorServerConnexionDelegate()
+    func messageErrorLengthChangeInputDelegate()
     func changeRate(element: String)
 }

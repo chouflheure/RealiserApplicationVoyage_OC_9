@@ -1,5 +1,5 @@
 import Foundation
 
-struct DataInfoTranslate: Decodable {
+struct TranslateDecode: Decodable {
     let translations: [[String: String]]
 }

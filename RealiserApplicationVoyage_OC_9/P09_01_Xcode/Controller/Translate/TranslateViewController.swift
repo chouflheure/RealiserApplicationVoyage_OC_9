@@ -1,7 +1,7 @@
 import UIKit
 import Lottie
 
-class TranslateViewController: UIViewController {
+final class TranslateViewController: UIViewController {
 
     // MARK: - IBOutlet
     @IBOutlet weak var translateButton: UIButton!
@@ -17,91 +17,89 @@ class TranslateViewController: UIViewController {
 
     @IBAction func clickButonTranslate(_ sender: Any) {
         printData(langageSelected: lanageSelected(selected: picker.selectedRow(inComponent: 0)))
-        animationPrint(animated: true)
+        animationViewOnScreen(animated: true)
     }
 
     // MARK: - Variable
-    var pickerData: [[String]] = [[String]]()
+    var pickerData = [["Francais", "Anglais"], ["English", "French"]]
     let translate = Translate()
 
     // Load animation to AnimationView
     let animationView = AnimationView(animation: Animation.named("loading"))
 
-    override func viewDidLoad() {
+    override internal func viewDidLoad() {
         super.viewDidLoad()
 
         // Add animationView as subview
         view.addSubview(animationView)
-        animationPrint(animated: false)
+        animationViewOnScreen(animated: false)
         placeholder()
-        imputTradView.delegate = self
-
+        delegateInitialisation()
+        backgroundInitialisationColor()
         translateButton.layer.cornerRadius = 25
-        backgroundInitialisation()
-        pickerData = [["Francais", "Anglais"],
-                      ["English", "French"]]
+    }
 
+    internal func delegateInitialisation() {
         picker.delegate = self
         picker.dataSource = self
         traductionText.delegate = self
         translate.delegate = self
+        imputTradView.delegate = self
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        // Play the animation
+    override internal func viewWillAppear(_ animated: Bool) {
         animationView.play()
         animationView.loopMode = .loop
     }
 
-    func lanageSelected(selected: Int) -> String {
+    internal func lanageSelected(selected: Int) -> String {
         if selected == 0 {
             return "EN"
         } else {
             return "FR"
         }
     }
-    func printData(langageSelected: String) {
-        translate.inputTranslate = imputTradView.text!
+
+    internal func printData(langageSelected: String) {
+        translate.inputTranslate = imputTradView.text ?? ""
         translate.langueInputTranslate = langageSelected
-        translate.callData { (success) in
+
+        translate.callApiToTranslate { (success) in
             if success {
-                self.animationPrint(animated: false)
+                self.animationViewOnScreen(animated: false)
             } else {
-                self.animationPrint(animated: false)
-                self.messageErrorOperation()
+                self.animationViewOnScreen(animated: false)
+                self.messageErrorServerConnexion()
             }
         }
     }
 
-    func animationPrint(animated: Bool) {
+    internal func animationViewOnScreen(animated: Bool) {
+        var size = CGFloat()
         if animated {
-            animationView.frame = CGRect(
-                x: (UIScreen.main.bounds.maxX / 2) - 100,
-                y: UIScreen.main.bounds.maxY / 2,
-                width: 200,
-                height: 200
-            )
+            size = 200
         } else {
-            animationView.frame = CGRect(
-                x: (UIScreen.main.bounds.maxX / 2) - 100,
-                y: UIScreen.main.bounds.maxY / 2,
-                width: 0,
-                height: 0
-            )
+            size = 0
         }
+
+        animationView.frame = CGRect(
+            x: (UIScreen.main.bounds.maxX / 2) - 100,
+            y: UIScreen.main.bounds.maxY / 2,
+            width: size,
+            height: size)
     }
 
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    internal func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
 
-    func placeholder() {
+    internal func placeholder() {
         imputTradView.text = "Votre text"
         imputTradView.tintColor = .lightGray
     }
 
-    @objc func keyBoardWillShow(notification: Notification) {
+    @objc internal func keyBoardWillShow(notification: Notification) {
         if let userInfo = notification.userInfo as? [String: AnyObject] {
             let frame = userInfo[UIResponder.keyboardFrameEndUserInfoKey]
             let keyBoardRect = frame?.cgRectValue
@@ -112,7 +110,7 @@ class TranslateViewController: UIViewController {
         }
     }
 
-    func backgroundInitialisation() {
+    internal func backgroundInitialisationColor() {
         for index in 0 ..< viewTampon.count {
             viewTampon[index].backgroundColor = #colorLiteral(red: 0.7294117647, green: 0.9333333333, blue: 0.9019607843, alpha: 1)
         }
@@ -120,11 +118,11 @@ class TranslateViewController: UIViewController {
 }
 
 extension TranslateViewController: UITextViewDelegate {
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    override internal func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
 
-    func textViewDidChange(_ textView: UITextView) {
+    internal func textViewDidChange(_ textView: UITextView) {
         if imputTradView.text.isEmpty || imputTradView.text == "Votre text" {
             imputTradView.text.removeAll()
         } else {
@@ -132,7 +130,7 @@ extension TranslateViewController: UITextViewDelegate {
         }
     }
 
-    func textViewDidBeginEditing(_ textView: UITextView) {
+    internal func textViewDidBeginEditing(_ textView: UITextView) {
         if imputTradView.text.isEmpty || imputTradView.text == "Votre text"{
             imputTradView.text.removeAll()
         } else {
@@ -140,7 +138,7 @@ extension TranslateViewController: UITextViewDelegate {
         }
     }
 
-    func textViewDidEndEditing(_ textView: UITextView) {
+    internal func textViewDidEndEditing(_ textView: UITextView) {
         if imputTradView.text.isEmpty {
             imputTradView.text.removeAll()
             imputTradView.text = "Votre text"
@@ -152,19 +150,19 @@ extension TranslateViewController: UITextViewDelegate {
 }
 
 extension TranslateViewController: UIPickerViewDelegate, UIPickerViewDataSource {
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+    internal func numberOfComponents(in pickerView: UIPickerView) -> Int {
         2
     }
 
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    internal func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         pickerData.count
     }
 
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    internal func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         pickerData[component][row]
     }
 
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+    internal func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         let modification = pickerData[component][row]
         switch modification {
         case "Francais":
@@ -180,8 +178,8 @@ extension TranslateViewController: UIPickerViewDelegate, UIPickerViewDataSource 
         }
     }
 
-    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int,
-                    forComponent component: Int, reusing view: UIView?) -> UIView {
+    internal func pickerView(_ pickerView: UIPickerView, viewForRow row: Int,
+                             forComponent component: Int, reusing view: UIView?) -> UIView {
         var label = UILabel()
         if let veee = view as? UILabel { label = veee }
         label.font = UIFont(name: "Optima", size: 25)
@@ -190,8 +188,4 @@ extension TranslateViewController: UIPickerViewDelegate, UIPickerViewDataSource 
         label.textAlignment = .center
         return label
     }
-}
-
-// MARK: - Message
-extension TranslateViewController {
 }
