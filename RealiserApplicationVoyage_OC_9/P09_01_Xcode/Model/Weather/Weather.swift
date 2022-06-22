@@ -43,7 +43,7 @@ class Weather: NSObject {
                     guard let data = data else { callback(false); return }
                     self.dataWeatherNY = try JSONDecoder().decode(DataInfoWeather.self, from: data)
 //                  print(self.dataWeatherNY?.main)
-                    self.delegate?.reloadData()
+                    // self.delegate?.reloadData()
 //                print(self.dataWeatherNY?.main["wind"])
                     callback(true)
                 } catch {
@@ -160,8 +160,8 @@ extension Weather: CLLocationManagerDelegate {
             location.fetchCityAndCountry { city, country, error in
                 guard let city = city, let country = country, error == nil else { return }
                 print(city + ", " + country)  // Rio de Janeiro, Brazil
-                self.delegate?.localisation(element: city)
-                // self.delegate?.reloadData()
+                //self.delegate?.localisation(element: city)
+                self.delegate?.reloadData(element: city)
             }
 
             localisationTrack.stopUpdatingLocation()

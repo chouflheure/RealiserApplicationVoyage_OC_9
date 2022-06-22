@@ -5,5 +5,5 @@ protocol WeatherDelegate: AnyObject {
     func callMessageErrorOperator()
     func callMessageErrorWidth()
     func localisation(element: String)
-    func reloadData()
+    func reloadData(element: String)
 }

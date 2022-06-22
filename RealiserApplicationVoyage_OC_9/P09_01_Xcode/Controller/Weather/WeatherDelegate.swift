@@ -4,14 +4,12 @@ extension WeatherPageViewController: WeatherDelegate {
 
     func printBoard(element: String) {
         // ☀️ ⛅ ☁️ 🌧️
-        weatherData.append("test")
-        print("test = \(weatherData)")
     }
 
     func localisation(element: String) {
         cities.remove(at: 2)
         cities.append(element)
-        //print("ici = \(cities)")
+        print("ici = \(cities)")
     }
 
     func callMessageErrorOperator() {
@@ -20,9 +18,11 @@ extension WeatherPageViewController: WeatherDelegate {
     func callMessageErrorWidth() {
     }
 
-    func reloadData() {
-        localisation(element: cities[2])
+    func reloadData(element: String) {
+        while items.count > 3 {
+            items.removeFirst()
+        }
+        localisation(element: element)
         populateItems()
-        print(cities)
     }
 }

@@ -1,17 +1,22 @@
 import Foundation
 import UIKit
 
+/*
+struct DataeatherCity {
+}
+*/
+
 class WeatherPageViewController: UIPageViewController {
     let weather = Weather()
-    fileprivate var items: [UIViewController] = []
+    var items: [UIViewController] = []
     var cities = ["Paris", "New York", "Localisation"]
-    var weatherData = ["1", "2", "3"]
+    var dataParis = [String]()
+    /// faire une structure pour récupérer les infos des datas
 
     override func viewDidLoad() {
         super.viewDidLoad()
         dataSource = self
         decoratePageControl()
-        // callDataApi()
         weather.delegate = self
     }
 
@@ -22,11 +27,8 @@ class WeatherPageViewController: UIPageViewController {
     fileprivate func callDataApi() {
         weather.callData { (success) in
             if success {
-                //self.items.remove(at: 2)
-                // self.populateItems()
-               // self.weather.delegate?.reloadData()
                 self.populateItems()
-                print("true gggg")
+                print("true")
             } else {
                 print("false")
                 self.messageErrorServerConnexion()
@@ -41,6 +43,8 @@ class WeatherPageViewController: UIPageViewController {
     }
 
      func populateItems() {
+
+        print(items.count)
         if let firstViewController = items.first {
             setViewControllers([firstViewController], direction: .forward, animated: true, completion: nil)
         }
@@ -58,13 +62,6 @@ class WeatherPageViewController: UIPageViewController {
             let carousel = createCarouselItemControler(with: label, with: backgroundColor[index], with: image[index])
             items.append(carousel)
         }
-        print("1: \(items.count)")
-
-        while items.count > 3 {
-            items.removeFirst()
-        }
-
-        print("2: \(items.count)")
     }
 
     func createCarouselItemControler(with titleText: String?,
@@ -114,7 +111,7 @@ extension WeatherPageViewController: UIPageViewControllerDataSource {
     }
 
     internal func presentationCount(for _: UIPageViewController) -> Int {
-        return items.count
+        return 3
     }
 
     internal func presentationIndex(for _: UIPageViewController) -> Int {
