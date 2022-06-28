@@ -55,8 +55,15 @@ class Weather: NSObject {
                 do {
                     guard let data = data else { callback(false); return }
                     self.dataWeatherNY = try JSONDecoder().decode(DataInfoWeather.self, from: data)
-                  print(self.dataWeatherNY!)
-                    self.delegate?.localisation(element: "")
+//                  print(self.dataWeatherNY?.main)
+//                  self.delegate?.reloadData()
+//                  print(self.dataWeatherNY?.main["wind"])
+                    callback(true)
+                } catch {
+                    callback(false)
+                }
+            }
+        }.resume()
 
                     self.delegate?.addDataOnScreen(
                         element: DataWeatherApiCity(
