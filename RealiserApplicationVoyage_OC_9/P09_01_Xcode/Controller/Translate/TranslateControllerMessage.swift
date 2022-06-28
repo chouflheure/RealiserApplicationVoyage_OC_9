@@ -18,9 +18,9 @@ extension TranslateViewController {
         return self.present(alertVC, animated: true, completion: nil)
     }
 
-    // TODO: - Mettre des commentaires
-    // TODO: - déclarer les var en final
-    // TODO : Nommage des var
-    // TODO : class non utilisées => final
-    // TODO : wrap
+    // todo: Mettre des commentaires
+    // todo: déclarer les var en final
+    // todo: Nommage des var
+    // todo: class non utilisées => final
+    // todo: wrap
 }

@@ -18,11 +18,20 @@ extension WeatherPageViewController: WeatherDelegate {
     func callMessageErrorWidth() {
     }
 
+    func messageErrorLocalisation() {
+        let alertVC = UIAlertController(title: "Erreur!",
+                                        message: "Votre localisation n'a pas été trouvée",
+                                        preferredStyle: .alert)
+        alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        return self.present(alertVC, animated: true, completion: nil)
+    }
+
     func reloadData(element: String) {
-        while items.count > 3 {
-            items.removeFirst()
-        }
         localisation(element: element)
         populateItems()
+    }
+
+    func addDataOnScreen(element: DataWeatherApiCity) {
+        arrayDataWeather.append(element)
     }
 }

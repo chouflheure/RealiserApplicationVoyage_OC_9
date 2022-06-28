@@ -135,9 +135,9 @@
 		1DB9C578273E00E500F95628 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1DC2001B276A43C300F57A31 /* Weather */,
 				1DC20019276A43BE00F57A31 /* Change */,
 				1DC2001A276A43C100F57A31 /* Translate */,
-				1DC2001B276A43C300F57A31 /* Weather */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -248,7 +248,7 @@
 				1DB9C55D273E00BD00F95628 /* Sources */,
 				1DB9C55E273E00BD00F95628 /* Frameworks */,
 				1DB9C55F273E00BD00F95628 /* Resources */,
-				1D2C221C2743ED4D00BD799A /* ShellScript */,
+				1D2C221C2743ED4D00BD799A /* Run Script */,
 			);
 			buildRules = (
 			);
@@ -314,7 +314,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1D2C221C2743ED4D00BD799A /* ShellScript */ = {
+		1D2C221C2743ED4D00BD799A /* Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -323,6 +323,7 @@
 			);
 			inputPaths = (
 			);
+			name = "Run Script";
 			outputFileListPaths = (
 			);
 			outputPaths = (

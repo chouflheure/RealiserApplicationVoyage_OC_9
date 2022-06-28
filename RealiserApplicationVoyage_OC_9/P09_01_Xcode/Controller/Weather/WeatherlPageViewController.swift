@@ -1,17 +1,14 @@
 import Foundation
 import UIKit
 
-/*
-struct DataeatherCity {
-}
-*/
-
 class WeatherPageViewController: UIPageViewController {
     let weather = Weather()
     var items: [UIViewController] = []
     var cities = ["Paris", "New York", "Localisation"]
     var dataParis = [String]()
+
     /// faire une structure pour récupérer les infos des datas
+    var arrayDataWeather = [DataWeatherApiCity]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,15 +19,26 @@ class WeatherPageViewController: UIPageViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         callDataApi()
+        var iiii = 0
+        while iiii < 3 {
+            arrayDataWeather.append(DataWeatherApiCity(
+                wind: ["data": 10.0],
+                temp: ["data": 0.0],
+                weather: [WeatherJsonDecode(main: "data", description: "data", icon: "data")],
+                name: "city"))
+            iiii += 1
+        }
     }
 
     fileprivate func callDataApi() {
         weather.callData { (success) in
             if success {
+                while self.items.count > 3 {
+                    self.items.removeFirst()
+                }
+                self.weather.delegate?.reloadData(element: "")
                 self.populateItems()
-                print("true")
             } else {
-                print("false")
                 self.messageErrorServerConnexion()
             }
         }
@@ -44,7 +52,6 @@ class WeatherPageViewController: UIPageViewController {
 
      func populateItems() {
 
-        print(items.count)
         if let firstViewController = items.first {
             setViewControllers([firstViewController], direction: .forward, animated: true, completion: nil)
         }
@@ -59,15 +66,22 @@ class WeatherPageViewController: UIPageViewController {
                      UIImage(named: "localisation_weather")]
 
         for (index, label) in cities.enumerated() {
-            let carousel = createCarouselItemControler(with: label, with: backgroundColor[index], with: image[index])
+            let carousel = createCarouselItemControler(
+                with: label,
+                with: backgroundColor[index],
+                with: image[index],
+                with: arrayDataWeather[index])
             items.append(carousel)
         }
     }
 
     func createCarouselItemControler(with titleText: String?,
-                                     with color: UIColor?, with image: UIImage?) -> UIViewController {
+                                     with color: UIColor?,
+                                     with image: UIImage?,
+                                     with data: DataWeatherApiCity ) -> UIViewController {
+        print("data == \(data)" )
         let carousel = UIViewController()
-        carousel.view = CarouselItem(titleText: titleText, background: color, imageview: image!)
+        carousel.view = CarouselItem(titleText: titleText, background: color, imageview: image, arrayDataWeather: data)
         return carousel
     }
 }
@@ -115,11 +129,10 @@ extension WeatherPageViewController: UIPageViewControllerDataSource {
     }
 
     internal func presentationIndex(for _: UIPageViewController) -> Int {
-        guard let firstViewController = viewControllers?.first,
-              let firstViewControllerIndex = items.firstIndex(of: firstViewController) else {
-                return 0
-        }
-
+            guard let firstViewController = viewControllers?.first,
+                  let firstViewControllerIndex = items.firstIndex(of: firstViewController) else {
+                    return 0
+            }
         return firstViewControllerIndex
     }
 }

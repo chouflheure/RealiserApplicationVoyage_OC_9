@@ -2,6 +2,20 @@ import Foundation
 import CoreLocation
 import UserNotifications
 
+struct DataWeatherApiCity {
+    var wind: [String: Float]
+    var temp: [String: Float]
+    var weather: [WeatherJsonDecode]
+    var name: String
+
+    init(wind: [String: Float], temp: [String: Float], weather: [WeatherJsonDecode], name: String) {
+        self.wind = wind
+        self.temp = temp
+        self.weather = weather
+        self.name = name
+    }
+}
+
 class Weather: NSObject {
 
     var dataWeatherParis: DataInfoWeather?
@@ -12,7 +26,6 @@ class Weather: NSObject {
     // ☀️ ⛅ ☁️ 🌧️
 
     func callData(callback: @escaping (Bool) -> Void) {
-        // delegate?.printBoard(element: "")
         localisationInitialisation()
         let urlBody = "http://api.openweathermap.org/data/2.5/weather/"
         let urlAppid = "appid=01a551138c4f64c9b8b434bd7fb189db"
@@ -34,7 +47,7 @@ class Weather: NSObject {
                             "&" + urlCountryNY +
                             "&" + urlUnits )
 
-        URLSession.shared.dataTask(with: urlNY!) { data, response, error in
+        URLSession.shared.dataTask(with: urlNY!) { data, _/*response*/, _/*error*/ in
             DispatchQueue.main.async {
 
 //                let httpResponse = response as? HTTPURLResponse
@@ -42,102 +55,24 @@ class Weather: NSObject {
                 do {
                     guard let data = data else { callback(false); return }
                     self.dataWeatherNY = try JSONDecoder().decode(DataInfoWeather.self, from: data)
-//                  print(self.dataWeatherNY?.main)
-                    // self.delegate?.reloadData()
-//                print(self.dataWeatherNY?.main["wind"])
+                  print(self.dataWeatherNY!)
+                    self.delegate?.localisation(element: "")
+
+                    self.delegate?.addDataOnScreen(
+                        element: DataWeatherApiCity(
+                            wind: self.dataWeatherNY?.wind ?? ["Error": 0.0],
+                            temp: self.dataWeatherNY?.main ?? ["Error": 0.0],
+                            weather: self.dataWeatherNY?.weather ??
+                            [WeatherJsonDecode(main: "Error", description: "Error", icon: "Error")],
+                            name: self.dataWeatherNY?.name ?? "Error")
+                    )
                     callback(true)
                 } catch {
                     callback(false)
                 }
             }
         }.resume()
-
-        /*
-        URLSession.shared.dataTask(with: urlNY!) { data, _, error in
-            DispatchQueue.main.async {
-                do {
-                    guard let data = data else {return }
-                    self.dataWeatherNY = try JSONDecoder().decode(DataInfoWeather.self, from: data)
-                    callback(true)
-                } catch {
-                    callback(false)
-                    print("Error : \(error)")
-                }
-            }
-        }.resume()
-        */
     }
-/*
-    func dataTemperatureParis(dataWant: String) -> String {
-        guard let dataWeatherParis = dataWeatherNY else {return "Error"}
-        switch dataWant {
-        case "temp":
-            guard let data = dataWeatherParis.main["temp"] else {return "Error"}
-            return String(Int(data))
-        case "temp_min":
-            guard let data = dataWeatherParis.main["temp_min"] else {return "Error"}
-            return String(Int(data))
-        case "temp_max":
-            guard let data = dataWeatherParis.main["temp_max"] else {return "Error"}
-            return String(Int(data))
-        default:
-                print("Error")
-        }
-        return "Error"
-    }
-
-    func dataWindAndHumidityParis(dataWant: String) -> String {
-        guard let dataWeatherParis = dataWeatherParis else {return "Error"}
-        switch dataWant {
-        case "wind":
-            guard let data = dataWeatherParis.wind["speed"] else {return "Error"}
-            return String(Int(data))
-        case "humidity":
-            guard let data = dataWeatherParis.main["humidity"] else {return "Error"}
-            return String(Int(data))
-        default:
-                print("Error")
-        }
-        return "Error"
-    }
-
-    func dataTemperatureNY(dataWant: String) -> String {
-        guard let dataWeatherNY = dataWeatherNY else {return "Error"}
-        switch dataWant {
-        case "temp":
-            guard let data = dataWeatherNY.main["temp"] else {return "Error"}
-            return String(Int(data))
-        case "temp_min":
-            guard let data = dataWeatherNY.main["temp_min"] else {return "Error"}
-            return String(Int(data))
-        case "temp_max":
-            guard let data = dataWeatherNY.main["temp_max"] else {return "Error"}
-            return String(Int(data))
-        default:
-                print("Error")
-        }
-        return "Error"
-    }
-
-    func dataWindAndHumidityNY(dataWant: String) -> String {
-        guard let dataWeatherNY = dataWeatherNY else {return "Error"}
-        switch dataWant {
-        case "wind":
-            guard let data = dataWeatherNY.wind["speed"] else {return "Error"}
-            return String(Int(data))
-        case "humidity":
-            guard let data = dataWeatherNY.main["humidity"] else {return "Error"}
-            return String(Int(data))
-        default:
-                print("Error")
-        }
-        return "Error"
-    }
-
-    func time() {
-
-    }
- */
 }
 
 extension Weather: CLLocationManagerDelegate {
@@ -151,16 +86,20 @@ extension Weather: CLLocationManagerDelegate {
     internal func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
 
         for currentLocation in locations {
-            // print("\(index): \(currentLocation)")
             print("latitude = \(currentLocation.coordinate.latitude)")
             print("longitude = \(currentLocation.coordinate.longitude)")
 
             let location = CLLocation(latitude: currentLocation.coordinate.latitude,
                                       longitude: currentLocation.coordinate.longitude)
             location.fetchCityAndCountry { city, country, error in
-                guard let city = city, let country = country, error == nil else { return }
+                guard let city = city, let country = country, error == nil else {
+                    self.delegate?.reloadData(element: "Error")
+                    self.delegate?.messageErrorLocalisation()
+                    return
+                }
+
                 print(city + ", " + country)  // Rio de Janeiro, Brazil
-                //self.delegate?.localisation(element: city)
+                // self.delegate?.localisation(element: city)
                 self.delegate?.reloadData(element: city)
             }
 
