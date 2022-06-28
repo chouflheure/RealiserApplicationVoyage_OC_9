@@ -43,8 +43,8 @@ class Weather: NSObject {
                     guard let data = data else { callback(false); return }
                     self.dataWeatherNY = try JSONDecoder().decode(DataInfoWeather.self, from: data)
 //                  print(self.dataWeatherNY?.main)
-                    // self.delegate?.reloadData()
-//                print(self.dataWeatherNY?.main["wind"])
+//                  self.delegate?.reloadData()
+//                  print(self.dataWeatherNY?.main["wind"])
                     callback(true)
                 } catch {
                     callback(false)
