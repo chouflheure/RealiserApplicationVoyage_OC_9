@@ -5,25 +5,28 @@ class Translate {
     var translate: TranslateDecode?
     var inputTranslate = String()
     var langueInputTranslate = String()
+    var apiKey = Bundle.main.object(forInfoDictionaryKey: "API_Key_Translate") as? String
 
     weak var delegate: TranslateDelegate?
 
     func callApiToTranslate(callback: @escaping (Bool) -> Void) {
 
         // convert spacing by %20 in url
-        let newString = inputTranslate.replacingOccurrences(of: " ", with: "%20", options: .literal)
-        // newString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+        let stringUrl = inputTranslate.replacingOccurrences(of: " ", with: "%20", options: .literal)
+
+        guard let key = apiKey, !key.isEmpty else {
+            apiKey = ""
+            return
+        }
+
         let urlBody = "https://api-free.deepl.com/v2/translate"
-
-        // A modifier ( xconfig )
-        let urlAppid = "auth_key=218cbfe4-65de-21d9-1cea-b987c94501c4:fx"
-
-        let urlText = "text=\(newString)"
+        let urlAppid = "auth_key=\(key)"
+        let urlText = "text=\(stringUrl)"
         let urlLangageSelected = "target_lang=\(langueInputTranslate)"
 
         let defaultUrl = URL(string:
                                 urlBody
-                                + "?" + urlAppid
+                                + "?" + ""
                                 + "&" + ""
                                 + "&" + urlLangageSelected
             )
@@ -35,7 +38,7 @@ class Translate {
                     + "&" + urlLangageSelected
         )
 
-        URLSession.shared.dataTask(with: url ?? defaultUrl!) {data, _ /* response */, _ /*error*/ in
+        URLSession.shared.dataTask(with: url ?? defaultUrl!) {data, _ /* response */, error in
             DispatchQueue.main.async {
                 do {
                     guard let data = data else { callback(false); return }
@@ -44,6 +47,7 @@ class Translate {
                     callback(true)
                 } catch {
                     callback(false)
+                    print(error)
                 }
             }
         }.resume()

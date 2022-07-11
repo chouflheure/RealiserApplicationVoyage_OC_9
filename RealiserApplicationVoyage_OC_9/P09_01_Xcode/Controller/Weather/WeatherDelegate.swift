@@ -7,8 +7,8 @@ extension WeatherPageViewController: WeatherDelegate {
     }
 
     func localisation(element: String) {
-        cities.remove(at: 2)
-        cities.append(element)
+        // cities.remove(at: 2)
+        // cities.append(element)
         print("ici = \(cities)")
     }
 

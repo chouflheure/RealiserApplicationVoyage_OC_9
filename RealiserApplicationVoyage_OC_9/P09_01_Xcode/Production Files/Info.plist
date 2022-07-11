@@ -2,6 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>API_Key_Change</key>
+	<string>$(API_Key_Change)</string>
+	<key>API_Key_Translate</key>
+	<string>$(API_Key_Translate)</string>
+	<key>API_Key_Wather</key>
+	<string>$(API_Key_Weather)</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>

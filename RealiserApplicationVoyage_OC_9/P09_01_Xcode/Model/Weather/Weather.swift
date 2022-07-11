@@ -23,23 +23,28 @@ class Weather: NSObject {
     weak var delegate: WeatherDelegate?
     let localisationTrack: CLLocationManager = CLLocationManager()
     let weatherIcon = ["☀️", "⛅", "☁️", "🌧️"]
+    var apiKey = Bundle.main.object(forInfoDictionaryKey: "API_Key_Weather") as? String
     // ☀️ ⛅ ☁️ 🌧️
 
     func callData(callback: @escaping (Bool) -> Void) {
         localisationInitialisation()
+
+        guard let key = apiKey, !key.isEmpty else {
+            apiKey = ""
+            return
+        }
+
         let urlBody = "http://api.openweathermap.org/data/2.5/weather/"
-        let urlAppid = "appid=01a551138c4f64c9b8b434bd7fb189db"
-        // let urlCountryParis = "q=Paris"
+        let urlAppid = "appid=\(key)"
+        let urlCountryParis = "q=Paris"
         let urlCountryNY = "q=new%20york"
         let urlUnits = "units=metric"
 
-/*
         let urlParis = URL(string:
                             urlBody +
                             "?" + urlAppid +
                             "&" + urlCountryParis +
                             "&" + urlUnits )
-*/
 
         let urlNY = URL(string:
                             urlBody +

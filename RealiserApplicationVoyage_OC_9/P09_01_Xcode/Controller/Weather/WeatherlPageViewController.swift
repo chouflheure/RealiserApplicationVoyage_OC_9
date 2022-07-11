@@ -33,9 +33,6 @@ class WeatherPageViewController: UIPageViewController {
     fileprivate func callDataApi() {
         weather.callData { (success) in
             if success {
-                while self.items.count > 3 {
-                    self.items.removeFirst()
-                }
                 self.weather.delegate?.reloadData(element: "")
                 self.populateItems()
             } else {
@@ -43,6 +40,8 @@ class WeatherPageViewController: UIPageViewController {
             }
         }
     }
+
+    /// rendre chaque page responsable de récupérer les données
 
     fileprivate func decoratePageControl() {
         let uipc = UIPageControl.appearance(whenContainedInInstancesOf: [WeatherPageViewController.self])
@@ -65,7 +64,8 @@ class WeatherPageViewController: UIPageViewController {
                      UIImage(named: "new_york_weather"),
                      UIImage(named: "localisation_weather")]
 
-        for (index, label) in cities.enumerated() {
+         if (items.count > 3 ) {items.removeAll()}
+         for (index, label) in cities.enumerated() {
             let carousel = createCarouselItemControler(
                 with: label,
                 with: backgroundColor[index],

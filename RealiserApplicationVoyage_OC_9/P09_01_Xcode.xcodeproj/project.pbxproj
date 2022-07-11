@@ -53,6 +53,7 @@
 
 /* Begin PBXFileReference section */
 		1D0B95862856A5FC002BA348 /* currency-exchange.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "currency-exchange.json"; sourceTree = "<group>"; };
+		1D1809ED287C6681005B553C /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
 		1D2718C4286AA41F00EEC83E /* P09_01_XcodeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = P09_01_XcodeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D2718C6286AA41F00EEC83E /* P09_01_XcodeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = P09_01_XcodeTests.swift; sourceTree = "<group>"; };
 		1D2C220B2742503E00BD799A /* Translate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Translate.swift; sourceTree = "<group>"; };
@@ -135,6 +136,7 @@
 		1DB9C558273E00BD00F95628 = {
 			isa = PBXGroup;
 			children = (
+				1D1809ED287C6681005B553C /* Secrets.xcconfig */,
 				1DB9C563273E00BE00F95628 /* P09_01_Xcode */,
 				1D2718C5286AA41F00EEC83E /* P09_01_XcodeTests */,
 				1DB9C562273E00BE00F95628 /* Products */,
@@ -185,9 +187,9 @@
 		1DB9C57A273E00EF00F95628 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				1DC20013276A309100F57A31 /* Weather */,
 				1DC20012276A308900F57A31 /* Change */,
 				1DC20014276A309700F57A31 /* Translate */,
-				1DC20013276A309100F57A31 /* Weather */,
 				1D2C220F2742834F00BD799A /* MainTabBarViewController.swift */,
 			);
 			path = Controller;
@@ -505,6 +507,7 @@
 		};
 		1DB9C573273E00BF00F95628 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1D1809ED287C6681005B553C /* Secrets.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -567,6 +570,7 @@
 		};
 		1DB9C574273E00BF00F95628 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1D1809ED287C6681005B553C /* Secrets.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;

@@ -4,11 +4,19 @@ class Change {
 
     var currency: Currency!
     weak var delegate: ChangeDelegate?
+    var apiKey = Bundle.main.object(forInfoDictionaryKey: "API_Key_Change") as? String
+
+    public private (set) var value =  String()
 
     func callData() {
 
+        guard let key = apiKey, !key.isEmpty else {
+            apiKey = ""
+            return
+        }
+
         let urlBody = "http://data.fixer.io/api/latest"
-        let urlAppid = "access_key=8663c04304d05e8fdf3fcf4ba739e09b"
+        let urlAppid = "access_key=\(key)"
         let urlMoneyChange = "symbols=USD"
 
         let defaultUrl = URL(string:
@@ -35,7 +43,9 @@ class Change {
         }.resume()
     }
 
-    func conversion(device: String, montant: String?) {
+    // todo : - découper la méthode
+
+    public func conversion(device: String, montant: String?) {
         guard let currency = currency, let rates = currency.rates["USD"] else {
             delegate?.updateChange(element: "ERROR")
             delegate?.messageErrorServerConnexionDelegate()
