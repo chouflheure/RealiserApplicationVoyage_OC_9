@@ -43,7 +43,22 @@ class Change {
         }.resume()
     }
 
-    // todo : - découper la méthode
+    private func messageDelegateChange(rates: Double ) {
+        delegate?.changeRate(element:
+                                "Taux de change \n"
+                                + " \n€ - $ : \(String(format: "%.2f", rates))"
+                                + " \n $ - € : \(String(format: "%.2f", 1/rates))"
+        )
+    }
+
+    private func deviceConversion(device: String, amount: Double, rates: Double) {
+        if device == "Euro" {
+            delegate?.updateChange(element: String(format: "%.2f $", amount * rates))
+        } else {
+            delegate?.updateChange(element: String(format: "%.2f €", amount / rates))
+        }
+        messageDelegateChange(rates: rates)
+    }
 
     public func conversion(device: String, montant: String?) {
         guard let currency = currency, let rates = currency.rates["USD"] else {
@@ -54,21 +69,13 @@ class Change {
 
         guard let change = montant else {
             delegate?.updateChange(element: "0")
-            delegate?.changeRate(element:
-                                    "Taux de change \n"
-                                    + " \n€ - $ : \(String(format: "%.2f", rates))"
-                                    + " \n $ - € : \(String(format: "%.2f", 1/rates))"
-            )
+            messageDelegateChange(rates: rates)
             return
         }
 
-        guard let amount = Double(montant!) else {
+        guard let amount = Double(change) else {
             delegate?.updateChange(element: "0")
-            delegate?.changeRate(element:
-                                    "Taux de change \n"
-                                    + " \n€ - $ : \(String(format: "%.2f", rates))"
-                                    + " \n $ - € : \(String(format: "%.2f", 1/rates))"
-            )
+            messageDelegateChange(rates: rates)
             return
         }
 
@@ -76,19 +83,11 @@ class Change {
             delegate?.updateChange(element: "ERROR")
             delegate?.messageErrorLengthChangeInputDelegate()
         }
+
         if change.isEmpty {
             delegate?.updateChange(element: "0.0")
         } else {
-            if device == "Euro" {
-                delegate?.updateChange(element: String(format: "%.2f $", amount * rates))
-            } else {
-                delegate?.updateChange(element: String(format: "%.2f €", amount / rates))
-            }
-            delegate?.changeRate(element:
-                                    "Taux de change \n"
-                                    + " \n€ - $ : \(String(format: "%.2f", rates))"
-                                    + " \n $ - € : \(String(format: "%.2f", 1/rates))"
-            )
+            deviceConversion(device: device, amount: amount, rates: rates)
         }
     }
 }

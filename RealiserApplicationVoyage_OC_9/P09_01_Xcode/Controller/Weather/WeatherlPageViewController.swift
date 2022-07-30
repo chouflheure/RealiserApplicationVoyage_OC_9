@@ -15,8 +15,55 @@ class WeatherPageViewController: UIPageViewController {
         dataSource = self
         decoratePageControl()
         weather.delegate = self
+        let button = self.makeButton(title: "",
+                                     titleColor: .blue,
+                                     cornerRadius: 3.0,
+                                     borderWidth: 2,
+                                     borderColor: .black)
+
+        view.addSubview(button)
+        reloadButton()
+        button.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        button.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
+        button.topAnchor.constraint(equalTo: view.topAnchor, constant: 100).isActive = true
+        button.widthAnchor.constraint(equalToConstant: 40).isActive = true
+        button.addTarget(self, action: #selector(pressed(_ :)), for: .touchUpInside)
     }
 
+    func makeButton(title: String? = nil,
+                    titleColor: UIColor = .black,
+                    background: UIColor = .clear,
+                    cornerRadius: CGFloat = 0,
+                    borderWidth: CGFloat = 0,
+                    borderColor: UIColor = .clear) -> UIButton {
+
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.layer.cornerRadius = 6.0
+        return button
+}
+
+    func reloadButton() {
+        let image = UIImage(named: "reload")
+        let imageView = UIImageView(image: image!)
+        imageView.frame = CGRect(x: 20, y: 100, width: 40, height: 40)
+        view.addSubview(imageView)
+    }
+
+    @objc func pressed(_ sender: UIButton) {
+        callDataApi()
+        var iiii = 0
+        while iiii < 3 {
+            arrayDataWeather.append(DataWeatherApiCity(
+                wind: ["data": 10.0],
+                temp: ["data": 0.0],
+                weather: [WeatherJsonDecode(main: "data", description: "data", icon: "data")],
+                name: "city"))
+            iiii += 1
+        }
+        self.populateItems()
+}
+    
     override func viewWillAppear(_ animated: Bool) {
         callDataApi()
         var iiii = 0
@@ -28,13 +75,16 @@ class WeatherPageViewController: UIPageViewController {
                 name: "city"))
             iiii += 1
         }
+        self.populateItems()
     }
 
-    fileprivate func callDataApi() {
+     func callDataApi() {
         weather.callData { (success) in
             if success {
-                self.weather.delegate?.reloadData(element: "")
-                self.populateItems()
+                // self.weather.delegate?.reloadData(element: "")
+                if let firstViewController = self.items.first {
+                    self.setViewControllers([firstViewController], direction: .forward, animated: true, completion: nil)
+                }
             } else {
                 self.messageErrorServerConnexion()
             }

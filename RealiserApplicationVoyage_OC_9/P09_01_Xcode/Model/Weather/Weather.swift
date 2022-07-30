@@ -54,9 +54,6 @@ class Weather: NSObject {
 
         URLSession.shared.dataTask(with: urlNY!) { data, _/*response*/, _/*error*/ in
             DispatchQueue.main.async {
-
-//                let httpResponse = response as? HTTPURLResponse
-                self.delegate?.printBoard(element: "")
                 do {
                     guard let data = data else { callback(false); return }
                     self.dataWeatherNY = try JSONDecoder().decode(DataInfoWeather.self, from: data)
@@ -65,7 +62,7 @@ class Weather: NSObject {
 
                     self.delegate?.addDataOnScreen(
                         element: DataWeatherApiCity(
-                            wind: self.dataWeatherNY?.wind ?? ["Error": 0.0],
+                            wind: self.dataWeatherNY?.wind ?? ["ici": 0.0],
                             temp: self.dataWeatherNY?.main ?? ["Error": 0.0],
                             weather: self.dataWeatherNY?.weather ??
                             [WeatherJsonDecode(main: "Error", description: "Error", icon: "Error")],
@@ -98,13 +95,13 @@ extension Weather: CLLocationManagerDelegate {
                                       longitude: currentLocation.coordinate.longitude)
             location.fetchCityAndCountry { city, country, error in
                 guard let city = city, let country = country, error == nil else {
-                    self.delegate?.reloadData(element: "Error")
+                    // self.delegate?.reloadData(element: "ici")
                     self.delegate?.messageErrorLocalisation()
                     return
                 }
 
-                print(city + ", " + country)  // Rio de Janeiro, Brazil
-                // self.delegate?.localisation(element: city)
+                print(city + ", " + country)
+                self.delegate?.localisation(element: city)
                 self.delegate?.reloadData(element: city)
             }
 

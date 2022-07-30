@@ -7,8 +7,8 @@ extension WeatherPageViewController: WeatherDelegate {
     }
 
     func localisation(element: String) {
-        // cities.remove(at: 2)
-        // cities.append(element)
+        cities.remove(at: 2)
+        cities.append(element)
         print("ici = \(cities)")
     }
 
@@ -29,6 +29,8 @@ extension WeatherPageViewController: WeatherDelegate {
     func reloadData(element: String) {
         localisation(element: element)
         populateItems()
+        cities[0] = "test"
+        
     }
 
     func addDataOnScreen(element: DataWeatherApiCity) {
